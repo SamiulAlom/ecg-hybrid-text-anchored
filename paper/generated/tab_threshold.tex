@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Sensitivity to the annotation threshold (minimum positives for a database to count as annotating a diagnosis): seen-diagnosis macro AUROC ($\times100$) per held-out database and mean, seed 0, both methods with weight averaging; $C$ is the vocabulary size.}\label{tab:threshold}
+\begin{tabular}{llcccccc}
+\toprule
+Threshold & Method & $C$ & CPSC & PTB-XL & Georgia & S--N & Mean \\
+\midrule
+5 & Li-style & 43 & 83.0 & 87.5 & 84.7 & 86.9 & 85.52 \\
+5 & Ours & 43 & 84.2 & 87.9 & 84.3 & 87.3 & 85.93 \\
+\midrule
+10 (default) & Li-style & 43 & 84.0 & 87.5 & 85.5 & 87.5 & 86.13 \\
+10 (default) & Ours & 43 & 84.4 & 87.8 & 85.7 & 88.1 & 86.49 \\
+\midrule
+20 & Li-style & 43 & 84.9 & 87.5 & 85.4 & 87.1 & 86.21 \\
+20 & Ours & 43 & 85.1 & 87.6 & 85.1 & 87.7 & 86.35 \\
+\bottomrule
+\end{tabular}
+\end{table}

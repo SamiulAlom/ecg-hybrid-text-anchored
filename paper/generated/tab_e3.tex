@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Systematic zero-shot evaluation (E3). In every held-out database, each diagnosis that would otherwise be seen was withheld from training in one of 4--6 groups and scored by the text head; AUROC ($\times100$) is averaged over three seeds and then over diagnoses. Supervised: the same diagnoses scored by the proposed method when they are trained. Pairs: number of (database, diagnosis) pairs.}\label{tab:e3}
+\begin{tabular}{lcccccc}
+\toprule
+Held-out database & Pairs & Zero-shot & Supervised & $>$50 & $>$70 & MERL \\
+\midrule
+CPSC & 22 & 65.0 & 84.5 & 73\% & 45\% & 75.5 \\
+PTB-XL & 31 & 70.3 & 88.0 & 90\% & 55\% & 76.5 \\
+Georgia & 32 & 67.9 & 85.5 & 91\% & 47\% & 78.3 \\
+S--N & 35 & 75.4 & 88.3 & 94\% & 71\% & 78.3 \\
+\midrule
+All & 120 & 70.2 & 86.8 & 88\% & 56\% & 77.3 \\
+\bottomrule
+\end{tabular}
+\end{table}

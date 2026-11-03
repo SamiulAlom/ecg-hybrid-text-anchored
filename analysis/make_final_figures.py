@@ -84,13 +84,21 @@ def fig_unseen(R):
         v = [run(R, "ours", t, s)["per_label"][a]["auroc"] * 100 for s in range(3)]
         ax.bar(k, np.mean(v), 0.55, color=OKABE[3], alpha=0.85, zorder=2, label="Ours (text head)" if k == 0 else None)
         ax.errorbar(k, np.mean(v), yerr=np.std(v, ddof=1), color="k", lw=0.7, capsize=2, zorder=4)
+        for var, mk, fc, lab in (("merl", "^", "k", "MERL zero-shot (own prompts)"),
+                                 ("merl_desc", "^", "none", "MERL zero-shot (our descriptions)")):
+            f = os.path.join(ROOT, "results", "merl", "results", f"{var}-{t}.json")
+            if os.path.exists(f):
+                mv = json.load(open(f))["per_label"].get(a, {}).get("auroc")
+                if mv is not None:
+                    ax.scatter(k + 0.36, mv * 100, marker=mk, s=16, facecolors=fc, edgecolors="k", lw=0.7, zorder=5,
+                               label=lab if k == 0 else None)
         npos = run(R, "ours", t, 0)["per_label"][a]["n_pos"]
         ax.text(k, 3, f"n={npos}", ha="center", fontsize=5.5, color="white" if np.mean(v) > 10 else "k")
     ax.axhline(50, color="k", lw=0.6, ls=":")
     ax.set_xticks(range(len(items)), [f"{ABBR[c]}\n({'CPSC' if t == 'CPSC' else 'S–N'})" for t, c in items])
     ax.set_ylim(0, 100)
     ax.set_ylabel("AUROC (×100)")
-    ax.legend(frameon=False, loc="upper right", ncol=2)
+    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=2, fontsize=6)
     ax.grid(axis="y", lw=0.3, alpha=0.5)
     fig.savefig(os.path.join(OUT, "fig_unseen.pdf"))
     plt.close(fig)

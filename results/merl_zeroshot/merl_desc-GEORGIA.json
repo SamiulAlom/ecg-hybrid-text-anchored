@@ -1,0 +1,687 @@
+{
+ "name": "merl_desc-GEORGIA",
+ "config": {
+  "prep": "/kaggle/input/notebooks/samiulalom01/ecg-prep/prep",
+  "code": "/kaggle/input/datasets/samiulalom01/ecg-paper-code",
+  "out": "/kaggle/working/results",
+  "work": "/kaggle/working/merl_assets",
+  "targets": [
+   "CPSC",
+   "PTBXL",
+   "GEORGIA",
+   "SHAONING"
+  ],
+  "backbone": "resnet18",
+  "ckpt": null,
+  "merl_repo": "https://github.com/cheliu-computation/MERL-ICML2024",
+  "merl_commit": "2a38649285e16eff75b69aeb64f2366b380c1a9e",
+  "prompts": [
+   "ckepe",
+   "desc",
+   "name"
+  ],
+  "windows": "all",
+  "calib": "perclass",
+  "no_lead_swap": false,
+  "split_seed": 0,
+  "min_source": 10,
+  "bs": 256,
+  "max_records": 0,
+  "dry_run": false,
+  "mode": "loso",
+  "target": "GEORGIA",
+  "method": "merl_zeroshot",
+  "prompt_style": "desc",
+  "text_model": "ncbi/MedCPT-Query-Encoder",
+  "checkpoint": "res18_best_ckpt.pth"
+ },
+ "vocab": [
+  "164889003",
+  "164890007",
+  "6374002",
+  "426627000",
+  "164909002",
+  "59118001",
+  "270492004",
+  "713426002",
+  "39732003",
+  "445118002",
+  "251146004",
+  "698252002",
+  "426783006",
+  "63593006",
+  "10370003",
+  "17338001",
+  "164947007",
+  "111975006",
+  "164917005",
+  "47665007",
+  "427393009",
+  "426177001",
+  "427084000",
+  "164934002",
+  "59931005",
+  "164865005",
+  "164873001",
+  "429622005",
+  "164931005",
+  "55827005",
+  "195042002",
+  "233917008",
+  "428750005",
+  "67741000119109",
+  "446358003",
+  "89792004",
+  "713422000",
+  "426761007",
+  "251198002",
+  "251199005",
+  "164912004",
+  "164930006",
+  "164937009"
+ ],
+ "best_val_auroc": 0.7183636456140801,
+ "history": [],
+ "test_all": {
+  "auroc": 0.7536219877844546,
+  "auprc": 0.1978333516789455,
+  "f1": 0.2174437383197723,
+  "f1_oracle": 0.25955219987159667,
+  "n_labels": 33
+ },
+ "test_seen": {
+  "auroc": 0.7536219877844546,
+  "auprc": 0.1978333516789455,
+  "f1": 0.2174437383197723,
+  "f1_oracle": 0.25955219987159667,
+  "n_labels": 33
+ },
+ "test_unseen": {},
+ "seen": [
+  "164889003",
+  "164890007",
+  "6374002",
+  "426627000",
+  "164909002",
+  "59118001",
+  "270492004",
+  "713426002",
+  "39732003",
+  "445118002",
+  "251146004",
+  "698252002",
+  "426783006",
+  "63593006",
+  "10370003",
+  "17338001",
+  "164947007",
+  "111975006",
+  "164917005",
+  "47665007",
+  "427393009",
+  "426177001",
+  "427084000",
+  "164934002",
+  "59931005",
+  "164865005",
+  "164873001",
+  "429622005",
+  "164931005",
+  "55827005",
+  "195042002",
+  "233917008",
+  "428750005",
+  "67741000119109",
+  "446358003",
+  "89792004",
+  "713422000",
+  "426761007",
+  "251198002",
+  "251199005",
+  "164912004",
+  "164930006",
+  "164937009"
+ ],
+ "unseen": [],
+ "dropped": [],
+ "per_label": {
+  "AF": {
+   "auroc": 0.8805436191255714,
+   "auprc": 0.36072234307517315,
+   "f1": 0.3962085308056872,
+   "f1_oracle": 0.42814814814814817,
+   "n_pos": 570,
+   "n": 10344,
+   "prev": 0.05510440841317177
+  },
+  "AFL": {
+   "auroc": 0.8476554312825106,
+   "auprc": 0.08206600867471896,
+   "f1": 0.15699100572363042,
+   "f1_oracle": 0.15699100572363042,
+   "n_pos": 186,
+   "n": 10344,
+   "prev": 0.01798143796622753
+  },
+  "BBB": {
+   "auroc": 0.9440430596199749,
+   "auprc": 0.12858680063939834,
+   "f1": 0.16552901023890784,
+   "f1_oracle": 0.22108843537414966,
+   "n_pos": 116,
+   "n": 10344,
+   "prev": 0.011214230209589005
+  },
+  "LBBB": {
+   "auroc": 0.8930757761965118,
+   "auprc": 0.10195226862420596,
+   "f1": 0.1941594317284925,
+   "f1_oracle": 0.20174346201743462,
+   "n_pos": 231,
+   "n": 10344,
+   "prev": 0.022331787273287773
+  },
+  "RBBB": {
+   "auroc": 0.947056280190396,
+   "auprc": 0.5426836267418619,
+   "f1": 0.6149545772187281,
+   "f1_oracle": 0.6149545772187281,
+   "n_pos": 556,
+   "n": 10344,
+   "prev": 0.05375096574425697
+  },
+  "IAVB": {
+   "auroc": 0.9614683882971679,
+   "auprc": 0.7180044796523409,
+   "f1": 0.5487804878048781,
+   "f1_oracle": 0.682095006090134,
+   "n_pos": 769,
+   "n": 10344,
+   "prev": 0.07434261590242386
+  },
+  "IRBBB": {
+   "auroc": 0.8903827528663998,
+   "auprc": 0.22250647192886866,
+   "f1": 0.3384146341463415,
+   "f1_oracle": 0.34843205574912894,
+   "n_pos": 407,
+   "n": 10344,
+   "prev": 0.03934648260474205
+  },
+  "LAD": {
+   "auroc": 0.7305900838936804,
+   "auprc": 0.1791984928136426,
+   "f1": 0.2654561175961954,
+   "f1_oracle": 0.3042362002567394,
+   "n_pos": 940,
+   "n": 10344,
+   "prev": 0.09087393432855606
+  },
+  "LAnFB": {
+   "auroc": 0.8764033735624644,
+   "auprc": 0.08193928929100827,
+   "f1": 0.1458625525946704,
+   "f1_oracle": 0.156128024980484,
+   "n_pos": 180,
+   "n": 10344,
+   "prev": 0.01740139164030552
+  },
+  "LQRSV": {
+   "auroc": 0.6094486668561835,
+   "auprc": 0.06799270373994473,
+   "f1": 0.13506012950971322,
+   "f1_oracle": 0.13506012950971322,
+   "n_pos": 374,
+   "n": 10344,
+   "prev": 0.03615622594952583
+  },
+  "NSIVCB": {
+   "auroc": 0.6185217011565498,
+   "auprc": 0.028365454688722952,
+   "f1": 0.0747350808700502,
+   "f1_oracle": 0.0747350808700502,
+   "n_pos": 203,
+   "n": 10344,
+   "prev": 0.019624903798103333
+  },
+  "NSR": {
+   "auroc": 0.776542125572902,
+   "auprc": 0.3346692010208401,
+   "f1": 0.30179248534987935,
+   "f1_oracle": 0.4647272727272727,
+   "n_pos": 1752,
+   "n": 10344,
+   "prev": 0.16937355697155
+  },
+  "SVPB": {
+   "auroc": 0.7096479222485572,
+   "auprc": 0.11548643631434605,
+   "f1": 0.21239606953892667,
+   "f1_oracle": 0.21239606953892667,
+   "n_pos": 640,
+   "n": 10344,
+   "prev": 0.061871618032455444
+  },
+  "VPB": {
+   "auroc": 0.8241501066232041,
+   "auprc": 0.3015897760251098,
+   "f1": 0.3376932223543401,
+   "f1_oracle": 0.3444592790387183,
+   "n_pos": 357,
+   "n": 10344,
+   "prev": 0.03451276198029518
+  },
+  "LQT": {
+   "auroc": 0.6949601332881203,
+   "auprc": 0.23874171407276196,
+   "f1": 0.050870147255689425,
+   "f1_oracle": 0.32884283246977547,
+   "n_pos": 1391,
+   "n": 10344,
+   "prev": 0.13447409868240356
+  },
+  "QAb": {
+   "auroc": 0.5173448843012705,
+   "auprc": 0.04238478465568883,
+   "f1": 0.011764705882352941,
+   "f1_oracle": 0.09832922486989866,
+   "n_pos": 464,
+   "n": 10344,
+   "prev": 0.04485692083835602
+  },
+  "RAD": {
+   "auroc": 0.9464982041018571,
+   "auprc": 0.1913410151203994,
+   "f1": 0.27530364372469635,
+   "f1_oracle": 0.2838709677419355,
+   "n_pos": 83,
+   "n": 10344,
+   "prev": 0.008023975417017937
+  },
+  "SA": {
+   "auroc": 0.6292593946654013,
+   "auprc": 0.07598490833088183,
+   "f1": 0.1254681647940075,
+   "f1_oracle": 0.13056092843326886,
+   "n_pos": 455,
+   "n": 10344,
+   "prev": 0.04398685321211815
+  },
+  "SB": {
+   "auroc": 0.8022917998406418,
+   "auprc": 0.5769092988642706,
+   "f1": 0.5245791245791246,
+   "f1_oracle": 0.5307422746097483,
+   "n_pos": 1677,
+   "n": 10344,
+   "prev": 0.1621229648590088
+  },
+  "STach": {
+   "auroc": 0.9136006533455716,
+   "auprc": 0.7250786180077496,
+   "f1": 0.6274703557312253,
+   "f1_oracle": 0.6622017580577647,
+   "n_pos": 1261,
+   "n": 10344,
+   "prev": 0.12190642207860947
+  },
+  "TAb": {
+   "auroc": 0.6051054757896522,
+   "auprc": 0.29230739636445097,
+   "f1": 0.2692307692307692,
+   "f1_oracle": 0.3899414398897692,
+   "n_pos": 2306,
+   "n": 10344,
+   "prev": 0.2229311615228653
+  },
+  "TInv": {
+   "auroc": 0.5449425347649297,
+   "auprc": 0.09377423219411146,
+   "f1": 0.08620689655172414,
+   "f1_oracle": 0.15153444543486566,
+   "n_pos": 812,
+   "n": 10344,
+   "prev": 0.07849961519241333
+  },
+  "LVH": {
+   "auroc": 0.6625546589056247,
+   "auprc": 0.189392301733523,
+   "f1": 0.237449615243679,
+   "f1_oracle": 0.28164556962025317,
+   "n_pos": 1232,
+   "n": 10344,
+   "prev": 0.1191028580069542
+  },
+  "STD": {
+   "auroc": 0.5673470742643529,
+   "auprc": 0.005015479590641692,
+   "f1": 0.008688340807174889,
+   "f1_oracle": 0.014492753623188406,
+   "n_pos": 38,
+   "n": 10344,
+   "prev": 0.0036736272741109133
+  },
+  "STE": {
+   "auroc": 0.7001538585232505,
+   "auprc": 0.036220557582982024,
+   "f1": 0.05387205387205387,
+   "f1_oracle": 0.07860262008733625,
+   "n_pos": 134,
+   "n": 10344,
+   "prev": 0.012954370118677616
+  },
+  "IIAVB": {
+   "auroc": 0.8815037302586959,
+   "auprc": 0.05493124029033698,
+   "f1": 0.015444015444015444,
+   "f1_oracle": 0.08,
+   "n_pos": 23,
+   "n": 10344,
+   "prev": 0.002223511226475239
+  },
+  "AVB": {
+   "auroc": 0.6500289481302138,
+   "auprc": 0.010357087238688736,
+   "f1": 0.021645021645021644,
+   "f1_oracle": 0.023853894893775623,
+   "n_pos": 74,
+   "n": 10344,
+   "prev": 0.007153905462473631
+  },
+  "NSSTTA": {
+   "auroc": 0.5553993227367982,
+   "auprc": 0.20518927686125377,
+   "f1": 0.28356290174471993,
+   "f1_oracle": 0.3164715719063545,
+   "n_pos": 1883,
+   "n": 10344,
+   "prev": 0.18203788995742798
+  },
+  "LAE": {
+   "auroc": 0.45563981519900804,
+   "auprc": 0.07241010054168098,
+   "f1": 0.15516318887105404,
+   "f1_oracle": 0.15516318887105404,
+   "n_pos": 870,
+   "n": 10344,
+   "prev": 0.08410672843456268
+  },
+  "RVH": {
+   "auroc": 0.8723639405659563,
+   "auprc": 0.24716640242385637,
+   "f1": 0.22807017543859648,
+   "f1_oracle": 0.34101382488479265,
+   "n_pos": 86,
+   "n": 10344,
+   "prev": 0.008313998579978943
+  },
+  "ATach": {
+   "auroc": 0.8381605550324045,
+   "auprc": 0.013879249438778102,
+   "f1": 0.014925373134328358,
+   "f1_oracle": 0.041666666666666664,
+   "n_pos": 28,
+   "n": 10344,
+   "prev": 0.002706883242353797
+  },
+  "SVT": {
+   "auroc": 0.9263706725174554,
+   "auprc": 0.05260490155965596,
+   "f1": 0.09090909090909091,
+   "f1_oracle": 0.097799511002445,
+   "n_pos": 32,
+   "n": 10344,
+   "prev": 0.0030935807153582573
+  },
+  "STIAb": {
+   "auroc": 0.5964706531637187,
+   "auprc": 0.1390486873033074,
+   "f1": 0.20698644421272158,
+   "f1_oracle": 0.21329437545653762,
+   "n_pos": 992,
+   "n": 10344,
+   "prev": 0.0959010049700737
+  }
+ },
+ "prompts": {
+  "164889003": {
+   "abbr": "AF",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing atrial fibrillation. Irregularly irregular RR intervals with no distinct P waves; the baseline shows fibrillatory f waves and the ventricular rhythm varies beat to beat."
+  },
+  "164890007": {
+   "abbr": "AFL",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing atrial flutter. Regular atrial activity at about 250 to 350 per minute producing sawtooth flutter waves, best seen in leads II, III, aVF and V1, often with fixed 2:1 or variable atrioventricular conduction."
+  },
+  "6374002": {
+   "abbr": "BBB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing bundle branch block. Delayed ventricular conduction through one bundle branch giving a widened QRS complex of 120 ms or more with abnormal terminal QRS morphology."
+  },
+  "426627000": {
+   "abbr": "Brady",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing bradycardia. Ventricular rate below 60 beats per minute regardless of the underlying rhythm."
+  },
+  "164909002": {
+   "abbr": "LBBB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing left bundle branch block. QRS duration of 120 ms or more with broad notched R waves in I, aVL, V5 and V6, absent septal q waves in lateral leads and deep S waves in V1, with discordant ST-T changes."
+  },
+  "59118001": {
+   "abbr": "RBBB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing right bundle branch block. QRS duration of 120 ms or more with an rsR' pattern in V1 and V2 and a wide slurred S wave in leads I and V6."
+  },
+  "270492004": {
+   "abbr": "IAVB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing first degree atrioventricular block. Every P wave is conducted to the ventricles but the PR interval is prolonged beyond 200 ms."
+  },
+  "713426002": {
+   "abbr": "IRBBB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing incomplete right bundle branch block. rsR' pattern in V1 and V2 resembling right bundle branch block but with QRS duration between 110 and 120 ms."
+  },
+  "39732003": {
+   "abbr": "LAD",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing left axis deviation. Mean frontal plane QRS axis more negative than minus 30 degrees: positive QRS in lead I and predominantly negative QRS in leads II and aVF."
+  },
+  "445118002": {
+   "abbr": "LAnFB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing left anterior fascicular block. Left axis deviation between minus 45 and minus 90 degrees with qR in I and aVL, rS in II, III and aVF, and QRS duration under 120 ms."
+  },
+  "251146004": {
+   "abbr": "LQRSV",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing low QRS voltages. Small QRS amplitudes: peak-to-peak below 0.5 mV in all limb leads or below 1.0 mV in all precordial leads."
+  },
+  "698252002": {
+   "abbr": "NSIVCB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing nonspecific intraventricular conduction disturbance. QRS duration above 110 ms without the morphology criteria of left or right bundle branch block."
+  },
+  "426783006": {
+   "abbr": "NSR",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing sinus rhythm. Normal sinus rhythm: upright P wave in leads I and II before every QRS complex, constant PR interval and a regular rate between 60 and 100 beats per minute."
+  },
+  "63593006": {
+   "abbr": "SVPB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing supraventricular premature beats. Premature atrial or junctional beats: early narrow QRS complexes preceded by an abnormal or hidden P wave, usually followed by a non-compensatory pause."
+  },
+  "10370003": {
+   "abbr": "PR",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing pacing rhythm. Electronic pacemaker rhythm with sharp pacing spikes preceding paced P waves or wide paced QRS complexes."
+  },
+  "17338001": {
+   "abbr": "VPB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing ventricular premature beats. Premature wide and bizarre QRS complexes not preceded by a P wave, with discordant T waves and usually a full compensatory pause."
+  },
+  "164947007": {
+   "abbr": "LPR",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing prolonged PR interval. PR interval longer than 200 ms, measured from the onset of the P wave to the onset of the QRS complex."
+  },
+  "111975006": {
+   "abbr": "LQT",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing prolonged QT interval. Heart-rate corrected QT interval prolonged, above about 450 ms in men or 460 ms in women, reflecting delayed ventricular repolarization."
+  },
+  "164917005": {
+   "abbr": "QAb",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing Q wave abnormal. Pathological Q waves wider than 40 ms or deeper than one quarter of the following R wave, suggesting prior myocardial necrosis."
+  },
+  "47665007": {
+   "abbr": "RAD",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing right axis deviation. Mean frontal plane QRS axis greater than plus 90 degrees: negative QRS in lead I and positive QRS in lead aVF."
+  },
+  "427393009": {
+   "abbr": "SA",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing sinus arrhythmia. Sinus P waves with normal morphology but phasic variation of the PP interval by more than 0.12 seconds, typically with respiration."
+  },
+  "426177001": {
+   "abbr": "SB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing sinus bradycardia. Sinus rhythm with normal P waves before each QRS complex at a rate below 60 beats per minute."
+  },
+  "427084000": {
+   "abbr": "STach",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing sinus tachycardia. Sinus rhythm with normal P waves before each QRS complex at a rate above 100 beats per minute."
+  },
+  "164934002": {
+   "abbr": "TAb",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing T wave abnormal. Abnormal T waves that are flattened, low amplitude, biphasic or inverted in leads where they are normally upright, indicating abnormal repolarization."
+  },
+  "59931005": {
+   "abbr": "TInv",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing T wave inversion. Negative T waves in leads where the T wave is normally positive, such as I, II and V3 to V6."
+  },
+  "164865005": {
+   "abbr": "MI",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing myocardial infarction. Evidence of myocardial infarction: pathological Q waves, loss of R wave amplitude and ST-T changes in contiguous leads matching a coronary territory."
+  },
+  "164873001": {
+   "abbr": "LVH",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing left ventricular hypertrophy. Increased QRS voltage over the left ventricle, for example S in V1 plus R in V5 or V6 above 35 mm, often with lateral ST depression and T inversion of strain pattern."
+  },
+  "429622005": {
+   "abbr": "STD",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing ST depression. Horizontal or downsloping depression of the ST segment of at least 0.5 mm below the PR baseline in two contiguous leads."
+  },
+  "164931005": {
+   "abbr": "STE",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing ST elevation. Elevation of the ST segment at the J point above the baseline in two or more contiguous leads."
+  },
+  "55827005": {
+   "abbr": "LVHV",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing left ventricular high voltage. Increased QRS amplitudes in left precordial or limb leads meeting voltage criteria without other features of hypertrophy."
+  },
+  "195042002": {
+   "abbr": "IIAVB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing second degree atrioventricular block. Intermittent failure of atrioventricular conduction: some P waves are not followed by a QRS complex, with or without progressive PR prolongation."
+  },
+  "233917008": {
+   "abbr": "AVB",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing atrioventricular block. Impaired conduction from atria to ventricles shown by prolonged PR interval or P waves not followed by QRS complexes."
+  },
+  "428750005": {
+   "abbr": "NSSTTA",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing nonspecific ST-T abnormality. Minor ST segment deviation or T wave flattening that does not meet criteria for ischemia, injury or a specific diagnosis."
+  },
+  "67741000119109": {
+   "abbr": "LAE",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing left atrial enlargement. Broad notched P wave longer than 120 ms in lead II with a deep terminal negative P component in V1."
+  },
+  "446358003": {
+   "abbr": "RAH",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing right atrial hypertrophy. Tall peaked P waves above 2.5 mm in the inferior leads indicating right atrial enlargement."
+  },
+  "89792004": {
+   "abbr": "RVH",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing right ventricular hypertrophy. Right axis deviation with dominant R wave in V1 and deep S waves in V5 and V6 indicating right ventricular hypertrophy."
+  },
+  "713422000": {
+   "abbr": "ATach",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing atrial tachycardia. Regular narrow complex tachycardia above 100 per minute with non-sinus P waves of uniform abnormal morphology."
+  },
+  "426761007": {
+   "abbr": "SVT",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing supraventricular tachycardia. Rapid regular narrow QRS tachycardia above 150 beats per minute originating above the ventricles, with P waves hidden or retrograde."
+  },
+  "251198002": {
+   "abbr": "CCR",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing clockwise cardiac rotation. Delayed precordial transition with the R/S ratio becoming greater than one only in V5 or V6."
+  },
+  "251199005": {
+   "abbr": "CCWR",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing counterclockwise cardiac rotation. Early precordial transition with dominant R waves already in V1 or V2."
+  },
+  "164912004": {
+   "abbr": "PWC",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing P wave change. Abnormal P wave morphology, amplitude or axis compared with normal sinus P waves."
+  },
+  "164930006": {
+   "abbr": "STIAb",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing ST interval abnormal. Abnormal ST segment shape or level not meeting specific elevation or depression criteria."
+  },
+  "164937009": {
+   "abbr": "UAb",
+   "source": "text_of(code,'full')",
+   "text": "An ECG showing U wave abnormal. Prominent or inverted U waves following the T wave."
+  }
+ },
+ "input_spec": {
+  "fs": 500,
+  "samples": 5000,
+  "leads": "I,II,III,aVR,aVF,aVL,V1-V6",
+  "norm": "global min-max [0,1] per 10 s window",
+  "source": "our 100 Hz 0.5-45 Hz band-passed mV, upsampled x5 (resample_poly)"
+ },
+ "val": {
+  "n": 7731,
+  "metrics": {
+   "auroc": 0.7183636456140801,
+   "auprc": 0.16321989203711754,
+   "f1": 0.11735429893699281,
+   "f1_oracle": 0.2154640700839726,
+   "n_labels": 43
+  }
+ },
+ "notes": {
+  "method": "MERL zero-shot (Liu et al., ICML 2024, arXiv 2403.06659), official code and released checkpoint, no training or fine-tuning on any of our data.",
+  "pretraining_data": "MIMIC-IV-ECG v1.0 (BIDMC, Boston; 771,693 ECG-report pairs, 500 Hz, 10 s). It shares no records with our databases (CPSC2018/CPSC-Extra, PTB-XL, Georgia, Shaoxing/Ningbo), which come from other hospitals and countries.",
+  "checkpoint_selection_caveat": "The released *_best_ckpt.pth was selected during pretraining by the average zero-shot AUROC on the validation splits of PTB-XL (super/sub/form/rhythm), CPSC2018 (ICBEB) and Chapman-Shaoxing (CSN) (see utils/utils_trainer.py and pretrain/config.yaml val_sets). Those are part of our CPSC, PTBXL and SHAONING test sets. MERL never trained on them, but it was model-selected on them, and its CKEPE prompts were written for their class names. GEORGIA was never used.",
+  "paper_eval": "The paper evaluates zero-shot on PTB-XL (4 subsets), CPSC2018 and CSN test splits, with dataset-specific label sets. Our evaluation uses our SNOMED vocabulary and protocol, so the numbers are not comparable to the paper's."
+ },
+ "minutes": 11.087459174791972
+}

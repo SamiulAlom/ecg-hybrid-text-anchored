@@ -1,0 +1,766 @@
+{
+ "name": "merl_name-SHAONING",
+ "config": {
+  "prep": "/kaggle/input/notebooks/samiulalom01/ecg-prep/prep",
+  "code": "/kaggle/input/datasets/samiulalom01/ecg-paper-code",
+  "out": "/kaggle/working/results",
+  "work": "/kaggle/working/merl_assets",
+  "targets": [
+   "CPSC",
+   "PTBXL",
+   "GEORGIA",
+   "SHAONING"
+  ],
+  "backbone": "resnet18",
+  "ckpt": null,
+  "merl_repo": "https://github.com/cheliu-computation/MERL-ICML2024",
+  "merl_commit": "2a38649285e16eff75b69aeb64f2366b380c1a9e",
+  "prompts": [
+   "ckepe",
+   "desc",
+   "name"
+  ],
+  "windows": "all",
+  "calib": "perclass",
+  "no_lead_swap": false,
+  "split_seed": 0,
+  "min_source": 10,
+  "bs": 256,
+  "max_records": 0,
+  "dry_run": false,
+  "mode": "loso",
+  "target": "SHAONING",
+  "method": "merl_zeroshot",
+  "prompt_style": "name",
+  "text_model": "ncbi/MedCPT-Query-Encoder",
+  "checkpoint": "res18_best_ckpt.pth"
+ },
+ "vocab": [
+  "164889003",
+  "164890007",
+  "6374002",
+  "426627000",
+  "164909002",
+  "59118001",
+  "270492004",
+  "713426002",
+  "39732003",
+  "445118002",
+  "251146004",
+  "698252002",
+  "426783006",
+  "63593006",
+  "10370003",
+  "17338001",
+  "164947007",
+  "111975006",
+  "164917005",
+  "47665007",
+  "427393009",
+  "426177001",
+  "427084000",
+  "164934002",
+  "59931005",
+  "164865005",
+  "164873001",
+  "429622005",
+  "164931005",
+  "55827005",
+  "195042002",
+  "233917008",
+  "428750005",
+  "67741000119109",
+  "446358003",
+  "89792004",
+  "713422000",
+  "426761007",
+  "251198002",
+  "251199005",
+  "164912004",
+  "164930006",
+  "164937009"
+ ],
+ "best_val_auroc": 0.7667341791548331,
+ "history": [],
+ "test_all": {
+  "auroc": 0.7254189623572795,
+  "auprc": 0.19645455730603084,
+  "f1": 0.1965306208318262,
+  "f1_oracle": 0.23177680871026063,
+  "n_labels": 41
+ },
+ "test_seen": {
+  "auroc": 0.7595651664804176,
+  "auprc": 0.2183768895309637,
+  "f1": 0.21713483342046488,
+  "f1_oracle": 0.25540001517438904,
+  "n_labels": 36
+ },
+ "test_unseen": {
+  "auroc": 0.4795662926706849,
+  "auprc": 0.03861376528651437,
+  "f1": 0.04818029019362781,
+  "f1_oracle": 0.0616897221685358,
+  "n_labels": 5
+ },
+ "seen": [
+  "164889003",
+  "164890007",
+  "6374002",
+  "426627000",
+  "164909002",
+  "59118001",
+  "270492004",
+  "713426002",
+  "39732003",
+  "445118002",
+  "251146004",
+  "698252002",
+  "426783006",
+  "63593006",
+  "10370003",
+  "17338001",
+  "164947007",
+  "111975006",
+  "164917005",
+  "47665007",
+  "427393009",
+  "426177001",
+  "427084000",
+  "164934002",
+  "59931005",
+  "164865005",
+  "164873001",
+  "429622005",
+  "164931005",
+  "195042002",
+  "233917008",
+  "428750005",
+  "67741000119109",
+  "446358003",
+  "89792004",
+  "713422000",
+  "426761007",
+  "164930006"
+ ],
+ "unseen": [
+  "55827005",
+  "251198002",
+  "251199005",
+  "164912004",
+  "164937009"
+ ],
+ "dropped": [],
+ "per_label": {
+  "AF": {
+   "auroc": 0.9018575451774926,
+   "auprc": 0.20501694862059566,
+   "f1": 0.27980206927575346,
+   "f1_oracle": 0.30504274563251144,
+   "n_pos": 1780,
+   "n": 45152,
+   "prev": 0.03942239657044411
+  },
+  "AFL": {
+   "auroc": 0.8485739435630377,
+   "auprc": 0.5893617274592386,
+   "f1": 0.44249446242971546,
+   "f1_oracle": 0.5877263813588649,
+   "n_pos": 8060,
+   "n": 45152,
+   "prev": 0.17850814759731293
+  },
+  "BBB": {
+   "auroc": 0.9044814434565813,
+   "auprc": 0.10896394773773815,
+   "f1": 0.20658682634730538,
+   "f1_oracle": 0.20658682634730538,
+   "n_pos": 385,
+   "n": 45152,
+   "prev": 0.008526753634214401
+  },
+  "LBBB": {
+   "auroc": 0.8842239175127657,
+   "auprc": 0.1344040586816762,
+   "f1": 0.2677725118483412,
+   "f1_oracle": 0.28434504792332266,
+   "n_pos": 240,
+   "n": 45152,
+   "prev": 0.005315379239618778
+  },
+  "RBBB": {
+   "auroc": 0.9848083142941769,
+   "auprc": 0.8738661824483115,
+   "f1": 0.7694545454545455,
+   "f1_oracle": 0.8208826074415921,
+   "n_pos": 1745,
+   "n": 45152,
+   "prev": 0.038647234439849854
+  },
+  "IAVB": {
+   "auroc": 0.9223713409102142,
+   "auprc": 0.500156844993444,
+   "f1": 0.36961911201262115,
+   "f1_oracle": 0.5203094777562862,
+   "n_pos": 1140,
+   "n": 45152,
+   "prev": 0.025248050689697266
+  },
+  "IRBBB": {
+   "auroc": 0.8935268667811606,
+   "auprc": 0.04362402691998821,
+   "f1": 0.07365684575389948,
+   "f1_oracle": 0.10378681626928471,
+   "n_pos": 246,
+   "n": 45152,
+   "prev": 0.005448263604193926
+  },
+  "LAD": {
+   "auroc": 0.8216221186542376,
+   "auprc": 0.31197538523082285,
+   "f1": 0.27586206896551724,
+   "f1_oracle": 0.42348130841121495,
+   "n_pos": 1545,
+   "n": 45152,
+   "prev": 0.034217752516269684
+  },
+  "LAnFB": {
+   "auroc": 0.9179417822229118,
+   "auprc": 0.07780766712223636,
+   "f1": 0.11917916337805841,
+   "f1_oracle": 0.14227877385772122,
+   "n_pos": 380,
+   "n": 45152,
+   "prev": 0.008416016586124897
+  },
+  "LQRSV": {
+   "auroc": 0.5193142071412783,
+   "auprc": 0.061566643154558356,
+   "f1": 0.10102489019033675,
+   "f1_oracle": 0.11581793600721045,
+   "n_pos": 1613,
+   "n": 45152,
+   "prev": 0.03572377562522888
+  },
+  "NSIVCB": {
+   "auroc": 0.4472656750585391,
+   "auprc": 0.015751428240271474,
+   "f1": 0.026729559748427674,
+   "f1_oracle": 0.0337286961960285,
+   "n_pos": 771,
+   "n": 45152,
+   "prev": 0.017075655981898308
+  },
+  "NSR": {
+   "auroc": 0.8112889330239265,
+   "auprc": 0.49486766268082805,
+   "f1": 0.42016806722689076,
+   "f1_oracle": 0.5250194704049844,
+   "n_pos": 8125,
+   "n": 45152,
+   "prev": 0.17994773387908936
+  },
+  "SVPB": {
+   "auroc": 0.6481500645820639,
+   "auprc": 0.06710544687191722,
+   "f1": 0.12161430119176599,
+   "f1_oracle": 0.12823397075365578,
+   "n_pos": 1321,
+   "n": 45152,
+   "prev": 0.029256733134388924
+  },
+  "PR": {
+   "auroc": 0.9004700559179906,
+   "auprc": 0.6795550349067523,
+   "f1": 0.652267818574514,
+   "f1_oracle": 0.6887052341597796,
+   "n_pos": 1182,
+   "n": 45152,
+   "prev": 0.02617824263870716
+  },
+  "VPB": {
+   "auroc": 0.9418476360583229,
+   "auprc": 0.49392468046442567,
+   "f1": 0.45670460168233545,
+   "f1_oracle": 0.5049645390070922,
+   "n_pos": 1385,
+   "n": 45152,
+   "prev": 0.030674166977405548
+  },
+  "LPR": {
+   "auroc": 0.8821891523111036,
+   "auprc": 0.012941679661223856,
+   "f1": 0.027700831024930747,
+   "f1_oracle": 0.04335260115606936,
+   "n_pos": 52,
+   "n": 45152,
+   "prev": 0.0011516654631122947
+  },
+  "LQT": {
+   "auroc": 0.8094056349634383,
+   "auprc": 0.03848410006115023,
+   "f1": 0.04521974765009738,
+   "f1_oracle": 0.0778498609823911,
+   "n_pos": 391,
+   "n": 45152,
+   "prev": 0.008659638464450836
+  },
+  "QAb": {
+   "auroc": 0.38443240621195385,
+   "auprc": 0.017686591824177606,
+   "f1": 0.04523347364288674,
+   "f1_oracle": 0.04600337560046739,
+   "n_pos": 1063,
+   "n": 45152,
+   "prev": 0.023542700335383415
+  },
+  "RAD": {
+   "auroc": 0.9546280237246377,
+   "auprc": 0.4108344656436481,
+   "f1": 0.40174165457184324,
+   "f1_oracle": 0.4961315280464217,
+   "n_pos": 853,
+   "n": 45152,
+   "prev": 0.018891744315624237
+  },
+  "SA": {
+   "auroc": 0.6867953359457486,
+   "auprc": 0.11075444977502198,
+   "f1": 0.17606724176067243,
+   "f1_oracle": 0.17606724176067243,
+   "n_pos": 2550,
+   "n": 45152,
+   "prev": 0.05647590383887291
+  },
+  "SB": {
+   "auroc": 0.9243663050822741,
+   "auprc": 0.888900918140917,
+   "f1": 0.6382756682989483,
+   "f1_oracle": 0.8186055012336654,
+   "n_pos": 16559,
+   "n": 45152,
+   "prev": 0.3667390048503876
+  },
+  "STach": {
+   "auroc": 0.9361219346275871,
+   "auprc": 0.7976924237756682,
+   "f1": 0.7122938731733476,
+   "f1_oracle": 0.7133303611234953,
+   "n_pos": 7255,
+   "n": 45152,
+   "prev": 0.16067948937416077
+  },
+  "TAb": {
+   "auroc": 0.6809582497147271,
+   "auprc": 0.35613522495646704,
+   "f1": 0.3229037882390236,
+   "f1_oracle": 0.3904057157438122,
+   "n_pos": 7043,
+   "n": 45152,
+   "prev": 0.15598423779010773
+  },
+  "TInv": {
+   "auroc": 0.7415676318656889,
+   "auprc": 0.16017236717286082,
+   "f1": 0.21380944508734226,
+   "f1_oracle": 0.23253224459497077,
+   "n_pos": 2877,
+   "n": 45152,
+   "prev": 0.06371811032295227
+  },
+  "MI": {
+   "auroc": 0.6109391653111715,
+   "auprc": 0.004638771814165402,
+   "f1": 0.005636403391559972,
+   "f1_oracle": 0.017421602787456445,
+   "n_pos": 123,
+   "n": 45152,
+   "prev": 0.002724131802096963
+  },
+  "LVH": {
+   "auroc": 0.5522595884282318,
+   "auprc": 0.01650004251251665,
+   "f1": 0.028403967538322812,
+   "f1_oracle": 0.033325841975150094,
+   "n_pos": 647,
+   "n": 45152,
+   "prev": 0.014329376630485058
+  },
+  "STD": {
+   "auroc": 0.6649007465906587,
+   "auprc": 0.06706945670791063,
+   "f1": 0.12175495066825275,
+   "f1_oracle": 0.12633241215949467,
+   "n_pos": 1668,
+   "n": 45152,
+   "prev": 0.03694188594818115
+  },
+  "STE": {
+   "auroc": 0.6439012422787103,
+   "auprc": 0.011660558562677757,
+   "f1": 0.03950617283950617,
+   "f1_oracle": 0.03950617283950617,
+   "n_pos": 176,
+   "n": 45152,
+   "prev": 0.003897944698110223
+  },
+  "LVHV": {
+   "auroc": 0.6180568302634837,
+   "auprc": 0.17881157623427932,
+   "f1": 0.2226777887742118,
+   "f1_oracle": 0.26452672281370837,
+   "n_pos": 5401,
+   "n": 45152,
+   "prev": 0.11961817741394043
+  },
+  "IIAVB": {
+   "auroc": 0.8632349422450563,
+   "auprc": 0.006751926758860945,
+   "f1": 0.015570469798657718,
+   "f1_oracle": 0.01784651992861392,
+   "n_pos": 66,
+   "n": 45152,
+   "prev": 0.001461729290895164
+  },
+  "AVB": {
+   "auroc": 0.3790523649807913,
+   "auprc": 0.004006041284168062,
+   "f1": 0.0053746770025839795,
+   "f1_oracle": 0.010757191667585143,
+   "n_pos": 244,
+   "n": 45152,
+   "prev": 0.005403968971222639
+  },
+  "NSSTTA": {
+   "auroc": 0.681145050161103,
+   "auprc": 0.06417954123081074,
+   "f1": 0.07342024262176354,
+   "f1_oracle": 0.13157894736842105,
+   "n_pos": 1158,
+   "n": 45152,
+   "prev": 0.02564670518040657
+  },
+  "RAH": {
+   "auroc": 0.736144358739447,
+   "auprc": 0.005093136358336438,
+   "f1": 0.018309859154929577,
+   "f1_oracle": 0.018309859154929577,
+   "n_pos": 36,
+   "n": 45152,
+   "prev": 0.0007973068859428167
+  },
+  "RVH": {
+   "auroc": 0.7431821209295567,
+   "auprc": 0.020045125536878115,
+   "f1": 0.047151277013752456,
+   "f1_oracle": 0.0625,
+   "n_pos": 110,
+   "n": 45152,
+   "prev": 0.0024362155236303806
+  },
+  "ATach": {
+   "auroc": 0.8020658035037702,
+   "auprc": 0.02416152931844879,
+   "f1": 0.0425858430845962,
+   "f1_oracle": 0.05472636815920398,
+   "n_pos": 297,
+   "n": 45152,
+   "prev": 0.006577781867235899
+  },
+  "SVT": {
+   "auroc": 0.9110741502670904,
+   "auprc": 0.17218727928279196,
+   "f1": 0.21994884910485935,
+   "f1_oracle": 0.2620380739081747,
+   "n_pos": 724,
+   "n": 45152,
+   "prev": 0.016034727916121483
+  },
+  "CCR": {
+   "auroc": 0.36948883990079906,
+   "auprc": 0.0012424913120703365,
+   "f1": 0.0019266394961096702,
+   "f1_oracle": 0.0034323909312618554,
+   "n_pos": 76,
+   "n": 45152,
+   "prev": 0.0016832033870741725
+  },
+  "CCWR": {
+   "auroc": 0.48549307253463736,
+   "auprc": 0.003815250437906246,
+   "f1": 0.006476983576220218,
+   "f1_oracle": 0.012692656391659111,
+   "n_pos": 162,
+   "n": 45152,
+   "prev": 0.0035878808703273535
+  },
+  "PWC": {
+   "auroc": 0.29788482058760024,
+   "auprc": 0.0020890036915934616,
+   "f1": 0.0034715525554484088,
+   "f1_oracle": 0.0065040650406504065,
+   "n_pos": 142,
+   "n": 45152,
+   "prev": 0.0031449326779693365
+  },
+  "STIAb": {
+   "auroc": 0.4082379410575904,
+   "auprc": 0.013724707203187072,
+   "f1": 0.033008723388831165,
+   "f1_oracle": 0.03486929456065124,
+   "n_pos": 801,
+   "n": 45152,
+   "prev": 0.017740078270435333
+  },
+  "UAb": {
+   "auroc": 0.6269079000669043,
+   "auprc": 0.007110504756722492,
+   "f1": 0.006348486566148962,
+   "f1_oracle": 0.02129277566539924,
+   "n_pos": 136,
+   "n": 45152,
+   "prev": 0.0030120480805635452
+  }
+ },
+ "prompts": {
+  "164889003": {
+   "abbr": "AF",
+   "source": "name",
+   "text": "atrial fibrillation"
+  },
+  "164890007": {
+   "abbr": "AFL",
+   "source": "name",
+   "text": "atrial flutter"
+  },
+  "6374002": {
+   "abbr": "BBB",
+   "source": "name",
+   "text": "bundle branch block"
+  },
+  "426627000": {
+   "abbr": "Brady",
+   "source": "name",
+   "text": "bradycardia"
+  },
+  "164909002": {
+   "abbr": "LBBB",
+   "source": "name",
+   "text": "left bundle branch block"
+  },
+  "59118001": {
+   "abbr": "RBBB",
+   "source": "name",
+   "text": "right bundle branch block"
+  },
+  "270492004": {
+   "abbr": "IAVB",
+   "source": "name",
+   "text": "first degree atrioventricular block"
+  },
+  "713426002": {
+   "abbr": "IRBBB",
+   "source": "name",
+   "text": "incomplete right bundle branch block"
+  },
+  "39732003": {
+   "abbr": "LAD",
+   "source": "name",
+   "text": "left axis deviation"
+  },
+  "445118002": {
+   "abbr": "LAnFB",
+   "source": "name",
+   "text": "left anterior fascicular block"
+  },
+  "251146004": {
+   "abbr": "LQRSV",
+   "source": "name",
+   "text": "low QRS voltages"
+  },
+  "698252002": {
+   "abbr": "NSIVCB",
+   "source": "name",
+   "text": "nonspecific intraventricular conduction disturbance"
+  },
+  "426783006": {
+   "abbr": "NSR",
+   "source": "name",
+   "text": "sinus rhythm"
+  },
+  "63593006": {
+   "abbr": "SVPB",
+   "source": "name",
+   "text": "supraventricular premature beats"
+  },
+  "10370003": {
+   "abbr": "PR",
+   "source": "name",
+   "text": "pacing rhythm"
+  },
+  "17338001": {
+   "abbr": "VPB",
+   "source": "name",
+   "text": "ventricular premature beats"
+  },
+  "164947007": {
+   "abbr": "LPR",
+   "source": "name",
+   "text": "prolonged PR interval"
+  },
+  "111975006": {
+   "abbr": "LQT",
+   "source": "name",
+   "text": "prolonged QT interval"
+  },
+  "164917005": {
+   "abbr": "QAb",
+   "source": "name",
+   "text": "Q wave abnormal"
+  },
+  "47665007": {
+   "abbr": "RAD",
+   "source": "name",
+   "text": "right axis deviation"
+  },
+  "427393009": {
+   "abbr": "SA",
+   "source": "name",
+   "text": "sinus arrhythmia"
+  },
+  "426177001": {
+   "abbr": "SB",
+   "source": "name",
+   "text": "sinus bradycardia"
+  },
+  "427084000": {
+   "abbr": "STach",
+   "source": "name",
+   "text": "sinus tachycardia"
+  },
+  "164934002": {
+   "abbr": "TAb",
+   "source": "name",
+   "text": "T wave abnormal"
+  },
+  "59931005": {
+   "abbr": "TInv",
+   "source": "name",
+   "text": "T wave inversion"
+  },
+  "164865005": {
+   "abbr": "MI",
+   "source": "name",
+   "text": "myocardial infarction"
+  },
+  "164873001": {
+   "abbr": "LVH",
+   "source": "name",
+   "text": "left ventricular hypertrophy"
+  },
+  "429622005": {
+   "abbr": "STD",
+   "source": "name",
+   "text": "ST depression"
+  },
+  "164931005": {
+   "abbr": "STE",
+   "source": "name",
+   "text": "ST elevation"
+  },
+  "55827005": {
+   "abbr": "LVHV",
+   "source": "name",
+   "text": "left ventricular high voltage"
+  },
+  "195042002": {
+   "abbr": "IIAVB",
+   "source": "name",
+   "text": "second degree atrioventricular block"
+  },
+  "233917008": {
+   "abbr": "AVB",
+   "source": "name",
+   "text": "atrioventricular block"
+  },
+  "428750005": {
+   "abbr": "NSSTTA",
+   "source": "name",
+   "text": "nonspecific ST-T abnormality"
+  },
+  "67741000119109": {
+   "abbr": "LAE",
+   "source": "name",
+   "text": "left atrial enlargement"
+  },
+  "446358003": {
+   "abbr": "RAH",
+   "source": "name",
+   "text": "right atrial hypertrophy"
+  },
+  "89792004": {
+   "abbr": "RVH",
+   "source": "name",
+   "text": "right ventricular hypertrophy"
+  },
+  "713422000": {
+   "abbr": "ATach",
+   "source": "name",
+   "text": "atrial tachycardia"
+  },
+  "426761007": {
+   "abbr": "SVT",
+   "source": "name",
+   "text": "supraventricular tachycardia"
+  },
+  "251198002": {
+   "abbr": "CCR",
+   "source": "name",
+   "text": "clockwise cardiac rotation"
+  },
+  "251199005": {
+   "abbr": "CCWR",
+   "source": "name",
+   "text": "counterclockwise cardiac rotation"
+  },
+  "164912004": {
+   "abbr": "PWC",
+   "source": "name",
+   "text": "P wave change"
+  },
+  "164930006": {
+   "abbr": "STIAb",
+   "source": "name",
+   "text": "ST interval abnormal"
+  },
+  "164937009": {
+   "abbr": "UAb",
+   "source": "name",
+   "text": "U wave abnormal"
+  }
+ },
+ "input_spec": {
+  "fs": 500,
+  "samples": 5000,
+  "leads": "I,II,III,aVR,aVF,aVL,V1-V6",
+  "norm": "global min-max [0,1] per 10 s window",
+  "source": "our 100 Hz 0.5-45 Hz band-passed mV, upsampled x5 (resample_poly)"
+ },
+ "val": {
+  "n": 4250,
+  "metrics": {
+   "auroc": 0.7667341791548331,
+   "auprc": 0.24075058393470547,
+   "f1": 0.1389902039894391,
+   "f1_oracle": 0.2969898503328392,
+   "n_labels": 38
+  }
+ },
+ "notes": {
+  "method": "MERL zero-shot (Liu et al., ICML 2024, arXiv 2403.06659), official code and released checkpoint, no training or fine-tuning on any of our data.",
+  "pretraining_data": "MIMIC-IV-ECG v1.0 (BIDMC, Boston; 771,693 ECG-report pairs, 500 Hz, 10 s). It shares no records with our databases (CPSC2018/CPSC-Extra, PTB-XL, Georgia, Shaoxing/Ningbo), which come from other hospitals and countries.",
+  "checkpoint_selection_caveat": "The released *_best_ckpt.pth was selected during pretraining by the average zero-shot AUROC on the validation splits of PTB-XL (super/sub/form/rhythm), CPSC2018 (ICBEB) and Chapman-Shaoxing (CSN) (see utils/utils_trainer.py and pretrain/config.yaml val_sets). Those are part of our CPSC, PTBXL and SHAONING test sets. MERL never trained on them, but it was model-selected on them, and its CKEPE prompts were written for their class names. GEORGIA was never used.",
+  "paper_eval": "The paper evaluates zero-shot on PTB-XL (4 subsets), CPSC2018 and CSN test splits, with dataset-specific label sets. Our evaluation uses our SNOMED vocabulary and protocol, so the numbers are not comparable to the paper's."
+ },
+ "minutes": 13.08776923418045
+}

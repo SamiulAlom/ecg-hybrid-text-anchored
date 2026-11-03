@@ -11,6 +11,8 @@ prep/
 *_test.npz
 results/*
 !results/final/
+!results/e3/
+!results/merl_zeroshot/
 logs/
 *.zip
 

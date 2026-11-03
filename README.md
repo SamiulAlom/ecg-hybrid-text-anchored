@@ -19,6 +19,8 @@ Public 12-lead ECG databases each annotate a different subset of diagnoses, so p
 | CORAL / DANN / GroupDRO / MixStyle | 86.1 / 85.6 / 86.1 / 86.1 | 51–53 |
 | **Hybrid (ours)** | **86.6** | **67.0** |
 
+Systematic zero-shot test (120 withheld diagnosis–database pairs, 3 seeds): macro AUROC 70.2, 88% of pairs above chance; MERL (report-pretrained, zero-shot) 77.3 on the same pairs, but 48.0–62.6 vs our 67.0 on the five genuinely unseen Shaoxing–Ningbo diagnoses.
+
 See the paper (`paper/`) for statistics, ablations, the annotation-removal experiment and the full development history, including negative results.
 
 ## Repository layout
@@ -40,8 +42,10 @@ analysis/       aggregation, statistics, figures and tables
   build_final.py      collects the final runs into results/final with canonical tags
   aggregate.py        main tables, paired bootstrap, DeLong + Holm, figures
   seed_stats.py       Wilcoxon over folds x seeds, unseen and E2 summaries
-  make_final_figures.py, make_supp_tables.py
-results/final/  the 153 run JSONs used in the paper (metrics, per-label results, histories, configs)
+  zeroshot_e3.py, calibration.py, make_final_figures.py, make_supp_tables.py, make_supp_e3.py
+results/final/  the 153 run JSONs of E1/E2/ablations (metrics, per-label results, histories, configs)
+results/e3/     the 76 run JSONs of the zero-shot (E3) and annotation-threshold experiments
+results/merl_zeroshot/  MERL zero-shot results (three prompt variants x four databases)
 paper/          LaTeX sources (Springer sn-jnl), generated tables and figures
 notebooks/      Colab runner notebook
 ```

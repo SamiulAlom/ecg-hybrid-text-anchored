@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Calibration on seen diagnoses of the held-out database, pooled over annotated record--diagnosis entries: expected calibration error (ECE, 15 bins, $\times100$), Brier score ($\times100$) and the ratio of mean predicted probability to observed prevalence (O/E; 1 is calibrated in the large), mean$_{\pm\mathrm{std}}$ over four folds and three seeds. No method was recalibrated.}\label{tab:calibration}
+\begin{tabular}{lccc}
+\toprule
+Method & ECE & Brier & O/E \\
+\midrule
+Naive pooling & \textbf{9.61}$_{\pm 1.83}$ & 5.61$_{\pm 0.87}$ & 2.87$_{\pm 0.69}$ \\
+Masked loss & 10.57$_{\pm 1.57}$ & 5.84$_{\pm 0.71}$ & 3.05$_{\pm 0.68}$ \\
+Li-style & 11.60$_{\pm 1.81}$ & 6.49$_{\pm 0.37}$ & 3.25$_{\pm 0.75}$ \\
+CORAL & 13.02$_{\pm 1.85}$ & 6.70$_{\pm 0.38}$ & 3.52$_{\pm 0.80}$ \\
+DANN & 12.56$_{\pm 2.34}$ & 6.74$_{\pm 0.45}$ & 3.44$_{\pm 0.85}$ \\
+GroupDRO & 11.69$_{\pm 1.97}$ & 6.46$_{\pm 0.21}$ & 3.27$_{\pm 0.79}$ \\
+MixStyle & 11.62$_{\pm 1.64}$ & 6.51$_{\pm 0.37}$ & 3.25$_{\pm 0.72}$ \\
+\midrule
+Ours (hybrid) & 11.60$_{\pm 1.84}$ & 6.50$_{\pm 0.40}$ & 3.25$_{\pm 0.75}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

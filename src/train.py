@@ -220,6 +220,17 @@ def main(argv=None):
         Y, A = complete_matrices(Yr, Ar, vocab, a.hierarchy or a.hier_soft)
         if a.hier_soft:
             A = Ar
+    if a.holdout and (a.hierarchy or a.hier_soft):
+        # held-out diagnoses must carry no information: remove them from the raw labels BEFORE implication
+        # completion, so that no supervised parent is completed from a held-out child (no-op without --holdout)
+        Yr, Ar = (Yr, Ar) if a.drop_rate > 0 else (Y0.copy(), A0.copy())
+        hcols = [vocab.index(c) for c in a.holdout if c in vocab]
+        Yr, Ar = Yr.copy(), Ar.copy()
+        Yr[:, hcols] = 0
+        Ar[:, hcols] = 0
+        Y, A = complete_matrices(Yr, Ar, vocab, True)
+        if a.hier_soft:
+            A = Ar
     tr, va, te = split_indices(meta, a.mode, a.target, seed=a.split_seed)
     if a.max_train:
         tr = np.random.default_rng(a.split_seed).permutation(tr)[:a.max_train]

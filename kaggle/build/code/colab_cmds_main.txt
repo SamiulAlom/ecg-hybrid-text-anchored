@@ -1,0 +1,66 @@
+# final runs on Colab
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 0 --tag loso-CPSC-hyb-lin-s0
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 0 --tag loso-CPSC-hyb-avg-detach-s0
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 0 --tag loso-CPSC-hyb-avg-pseudo-s0
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 0 --tag loso-PTBXL-hyb-lin-s0
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 0 --tag loso-PTBXL-hyb-avg-detach-s0
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 0 --tag loso-PTBXL-hyb-avg-pseudo-s0
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 0 --tag loso-SHAONING-hyb-lin-s0
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 0 --tag loso-SHAONING-hyb-avg-detach-s0
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 0 --tag loso-SHAONING-hyb-avg-pseudo-s0
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 1 --tag loso-CPSC-hyb-lin-s1
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 1 --tag loso-CPSC-hyb-avg-detach-s1
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 1 --tag loso-CPSC-hyb-avg-pseudo-s1
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 1 --tag loso-PTBXL-hyb-lin-s1
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 1 --tag loso-PTBXL-hyb-avg-detach-s1
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 1 --tag loso-PTBXL-hyb-avg-pseudo-s1
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 1 --tag loso-GEORGIA-hyb-lin-s1
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 1 --tag loso-GEORGIA-hyb-avg-detach-s1
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 1 --tag loso-GEORGIA-hyb-avg-pseudo-s1
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 1 --tag loso-SHAONING-hyb-lin-s1
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 1 --tag loso-SHAONING-hyb-avg-detach-s1
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 1 --tag loso-SHAONING-hyb-avg-pseudo-s1
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 2 --tag loso-CPSC-hyb-lin-s2
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 2 --tag loso-CPSC-hyb-avg-detach-s2
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 2 --tag loso-CPSC-hyb-avg-pseudo-s2
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 2 --tag loso-PTBXL-hyb-lin-s2
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 2 --tag loso-PTBXL-hyb-avg-detach-s2
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 2 --tag loso-PTBXL-hyb-avg-pseudo-s2
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 2 --tag loso-GEORGIA-hyb-lin-s2
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 2 --tag loso-GEORGIA-hyb-avg-detach-s2
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 2 --tag loso-GEORGIA-hyb-avg-pseudo-s2
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score linear --seed 2 --tag loso-SHAONING-hyb-lin-s2
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --text_detach --seed 2 --tag loso-SHAONING-hyb-avg-detach-s2
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head hybrid --text_emb {EMB} --labels mask_pseudo --pseudo_soft --pseudo_start 3 --hierarchy --eval_ema --ema_warmup --text_w 1.0 --seen_score avg --diag --seed 2 --tag loso-SHAONING-hyb-avg-pseudo-s2
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels naive --eval_ema --ema_warmup --seed 1 --tag loso-CPSC-naiveema-s1
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 1 --tag loso-CPSC-coralema-s1
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 1 --tag loso-CPSC-dannema-s1
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 1 --tag loso-CPSC-groupdroema-s1
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels naive --eval_ema --ema_warmup --seed 1 --tag loso-PTBXL-naiveema-s1
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 1 --tag loso-PTBXL-coralema-s1
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 1 --tag loso-PTBXL-dannema-s1
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 1 --tag loso-PTBXL-groupdroema-s1
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels naive --eval_ema --ema_warmup --seed 1 --tag loso-GEORGIA-naiveema-s1
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 1 --tag loso-GEORGIA-coralema-s1
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 1 --tag loso-GEORGIA-dannema-s1
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 1 --tag loso-GEORGIA-groupdroema-s1
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels naive --eval_ema --ema_warmup --seed 1 --tag loso-SHAONING-naiveema-s1
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 1 --tag loso-SHAONING-coralema-s1
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 1 --tag loso-SHAONING-dannema-s1
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 1 --tag loso-SHAONING-groupdroema-s1
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels naive --eval_ema --ema_warmup --seed 2 --tag loso-CPSC-naiveema-s2
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 2 --tag loso-CPSC-coralema-s2
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 2 --tag loso-CPSC-dannema-s2
+--prep {PREP} --mode loso --epochs 30 --target CPSC --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 2 --tag loso-CPSC-groupdroema-s2
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels naive --eval_ema --ema_warmup --seed 2 --tag loso-PTBXL-naiveema-s2
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 2 --tag loso-PTBXL-coralema-s2
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 2 --tag loso-PTBXL-dannema-s2
+--prep {PREP} --mode loso --epochs 30 --target PTBXL --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 2 --tag loso-PTBXL-groupdroema-s2
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels naive --eval_ema --ema_warmup --seed 2 --tag loso-GEORGIA-naiveema-s2
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 2 --tag loso-GEORGIA-coralema-s2
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 2 --tag loso-GEORGIA-dannema-s2
+--prep {PREP} --mode loso --epochs 30 --target GEORGIA --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 2 --tag loso-GEORGIA-groupdroema-s2
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels naive --eval_ema --ema_warmup --seed 2 --tag loso-SHAONING-naiveema-s2
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels mask --hierarchy --dg coral --eval_ema --ema_warmup --seed 2 --tag loso-SHAONING-coralema-s2
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels mask --hierarchy --dg dann --eval_ema --ema_warmup --seed 2 --tag loso-SHAONING-dannema-s2
+--prep {PREP} --mode loso --epochs 30 --target SHAONING --head linear --labels mask --hierarchy --dg groupdro --eval_ema --ema_warmup --seed 2 --tag loso-SHAONING-groupdroema-s2

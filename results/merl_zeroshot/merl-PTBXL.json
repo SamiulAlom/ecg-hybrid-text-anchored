@@ -1,0 +1,678 @@
+{
+ "name": "merl-PTBXL",
+ "config": {
+  "prep": "/kaggle/input/notebooks/samiulalom01/ecg-prep/prep",
+  "code": "/kaggle/input/datasets/samiulalom01/ecg-paper-code",
+  "out": "/kaggle/working/results",
+  "work": "/kaggle/working/merl_assets",
+  "targets": [
+   "CPSC",
+   "PTBXL",
+   "GEORGIA",
+   "SHAONING"
+  ],
+  "backbone": "resnet18",
+  "ckpt": null,
+  "merl_repo": "https://github.com/cheliu-computation/MERL-ICML2024",
+  "merl_commit": "2a38649285e16eff75b69aeb64f2366b380c1a9e",
+  "prompts": [
+   "ckepe",
+   "desc",
+   "name"
+  ],
+  "windows": "all",
+  "calib": "perclass",
+  "no_lead_swap": false,
+  "split_seed": 0,
+  "min_source": 10,
+  "bs": 256,
+  "max_records": 0,
+  "dry_run": false,
+  "mode": "loso",
+  "target": "PTBXL",
+  "method": "merl_zeroshot",
+  "prompt_style": "ckepe",
+  "text_model": "ncbi/MedCPT-Query-Encoder",
+  "checkpoint": "res18_best_ckpt.pth"
+ },
+ "vocab": [
+  "164889003",
+  "164890007",
+  "6374002",
+  "426627000",
+  "164909002",
+  "59118001",
+  "270492004",
+  "713426002",
+  "39732003",
+  "445118002",
+  "251146004",
+  "698252002",
+  "426783006",
+  "63593006",
+  "10370003",
+  "17338001",
+  "164947007",
+  "111975006",
+  "164917005",
+  "47665007",
+  "427393009",
+  "426177001",
+  "427084000",
+  "164934002",
+  "59931005",
+  "164865005",
+  "164873001",
+  "429622005",
+  "164931005",
+  "55827005",
+  "195042002",
+  "233917008",
+  "428750005",
+  "67741000119109",
+  "446358003",
+  "89792004",
+  "713422000",
+  "426761007",
+  "251198002",
+  "251199005",
+  "164912004",
+  "164930006",
+  "164937009"
+ ],
+ "best_val_auroc": 0.741156753179213,
+ "history": [],
+ "test_all": {
+  "auroc": 0.7652156256577394,
+  "auprc": 0.2289946005904101,
+  "f1": 0.21578931233751258,
+  "f1_oracle": 0.2796069291311146,
+  "n_labels": 32
+ },
+ "test_seen": {
+  "auroc": 0.7652156256577394,
+  "auprc": 0.2289946005904101,
+  "f1": 0.21578931233751258,
+  "f1_oracle": 0.2796069291311146,
+  "n_labels": 32
+ },
+ "test_unseen": {},
+ "seen": [
+  "164889003",
+  "164890007",
+  "6374002",
+  "426627000",
+  "164909002",
+  "59118001",
+  "270492004",
+  "713426002",
+  "39732003",
+  "445118002",
+  "251146004",
+  "698252002",
+  "426783006",
+  "63593006",
+  "10370003",
+  "17338001",
+  "164947007",
+  "111975006",
+  "164917005",
+  "47665007",
+  "427393009",
+  "426177001",
+  "427084000",
+  "164934002",
+  "59931005",
+  "164865005",
+  "164873001",
+  "429622005",
+  "164931005",
+  "55827005",
+  "195042002",
+  "233917008",
+  "428750005",
+  "67741000119109",
+  "446358003",
+  "89792004",
+  "713422000",
+  "426761007",
+  "251198002",
+  "251199005",
+  "164912004",
+  "164930006",
+  "164937009"
+ ],
+ "unseen": [],
+ "dropped": [],
+ "per_label": {
+  "AF": {
+   "auroc": 0.9291513392918374,
+   "auprc": 0.6183346606196057,
+   "f1": 0.525963149078727,
+   "f1_oracle": 0.5716001200840588,
+   "n_pos": 1514,
+   "n": 21837,
+   "prev": 0.06933186948299408
+  },
+  "AFL": {
+   "auroc": 0.9596342332317035,
+   "auprc": 0.4190040980496415,
+   "f1": 0.06582278481012659,
+   "f1_oracle": 0.5,
+   "n_pos": 73,
+   "n": 21837,
+   "prev": 0.0033429500181227922
+  },
+  "LBBB": {
+   "auroc": 0.969336279496373,
+   "auprc": 0.2794135547448034,
+   "f1": 0.4443482026851451,
+   "f1_oracle": 0.4501953125,
+   "n_pos": 536,
+   "n": 21837,
+   "prev": 0.024545496329665184
+  },
+  "RBBB": {
+   "auroc": 0.9877630959920775,
+   "auprc": 0.6009272452008766,
+   "f1": 0.7148347425057648,
+   "f1_oracle": 0.724112961622013,
+   "n_pos": 542,
+   "n": 21837,
+   "prev": 0.02482025884091854
+  },
+  "IAVB": {
+   "auroc": 0.9017545894537977,
+   "auprc": 0.3119852301365897,
+   "f1": 0.33682634730538924,
+   "f1_oracle": 0.3759920634920635,
+   "n_pos": 797,
+   "n": 21837,
+   "prev": 0.03649768605828285
+  },
+  "IRBBB": {
+   "auroc": 0.8495183139308236,
+   "auprc": 0.2932752111350274,
+   "f1": 0.3610705596107056,
+   "f1_oracle": 0.39284436493738817,
+   "n_pos": 1118,
+   "n": 21837,
+   "prev": 0.051197510212659836
+  },
+  "LAD": {
+   "auroc": 0.5459921033751663,
+   "auprc": 0.3137271844647678,
+   "f1": 0.18167381292679052,
+   "f1_oracle": 0.3813477648454296,
+   "n_pos": 5146,
+   "n": 21837,
+   "prev": 0.23565508425235748
+  },
+  "LAnFB": {
+   "auroc": 0.9452502726006924,
+   "auprc": 0.6072252636250547,
+   "f1": 0.4839349464498215,
+   "f1_oracle": 0.5746023731380965,
+   "n_pos": 1626,
+   "n": 21837,
+   "prev": 0.07446077466011047
+  },
+  "LQRSV": {
+   "auroc": 0.7501998117329449,
+   "auprc": 0.03522515402266166,
+   "f1": 0.056842105263157895,
+   "f1_oracle": 0.06962576153176675,
+   "n_pos": 182,
+   "n": 21837,
+   "prev": 0.008334478363394737
+  },
+  "NSIVCB": {
+   "auroc": 0.667483587517264,
+   "auprc": 0.06928737528721857,
+   "f1": 0.09649122807017543,
+   "f1_oracle": 0.13443740867023868,
+   "n_pos": 789,
+   "n": 21837,
+   "prev": 0.03613133728504181
+  },
+  "NSR": {
+   "auroc": 0.7671525553859564,
+   "auprc": 0.9394251723658117,
+   "f1": 0.6491755221692928,
+   "f1_oracle": 0.9062085201232187,
+   "n_pos": 18092,
+   "n": 21837,
+   "prev": 0.8285020589828491
+  },
+  "SVPB": {
+   "auroc": 0.7419097558229218,
+   "auprc": 0.09511582791370819,
+   "f1": 0.1770700636942675,
+   "f1_oracle": 0.1770700636942675,
+   "n_pos": 555,
+   "n": 21837,
+   "prev": 0.025415578857064247
+  },
+  "PR": {
+   "auroc": 0.4919587662496534,
+   "auprc": 0.012643739891196899,
+   "f1": 0.029821439528747624,
+   "f1_oracle": 0.030482870245481523,
+   "n_pos": 296,
+   "n": 21837,
+   "prev": 0.013554975390434265
+  },
+  "LPR": {
+   "auroc": 0.9570342236536424,
+   "auprc": 0.2098529253762249,
+   "f1": 0.290516206482593,
+   "f1_oracle": 0.3125,
+   "n_pos": 340,
+   "n": 21837,
+   "prev": 0.015569903887808323
+  },
+  "LQT": {
+   "auroc": 0.7906353571542842,
+   "auprc": 0.06536124585836674,
+   "f1": 0.12398921832884097,
+   "f1_oracle": 0.1388888888888889,
+   "n_pos": 118,
+   "n": 21837,
+   "prev": 0.005403672810643911
+  },
+  "QAb": {
+   "auroc": 0.6062931132317743,
+   "auprc": 0.037680168738873615,
+   "f1": 0.06476484194294525,
+   "f1_oracle": 0.07407407407407407,
+   "n_pos": 548,
+   "n": 21837,
+   "prev": 0.025095021352171898
+  },
+  "RAD": {
+   "auroc": 0.9292363371593835,
+   "auprc": 0.5451039216705273,
+   "f1": 0.5592105263157895,
+   "f1_oracle": 0.5592105263157895,
+   "n_pos": 343,
+   "n": 21837,
+   "prev": 0.015707286074757576
+  },
+  "SA": {
+   "auroc": 0.646313009694887,
+   "auprc": 0.05900327255020621,
+   "f1": 0.10646171363506975,
+   "f1_oracle": 0.10878950094974961,
+   "n_pos": 772,
+   "n": 21837,
+   "prev": 0.03535284101963043
+  },
+  "SB": {
+   "auroc": 0.8645965018808686,
+   "auprc": 0.1925347868997493,
+   "f1": 0.162744193201046,
+   "f1_oracle": 0.27914798206278024,
+   "n_pos": 637,
+   "n": 21837,
+   "prev": 0.029170673340559006
+  },
+  "STach": {
+   "auroc": 0.9628205241967687,
+   "auprc": 0.44686635556636495,
+   "f1": 0.5196163905841326,
+   "f1_oracle": 0.5276358569437993,
+   "n_pos": 826,
+   "n": 21837,
+   "prev": 0.03782570734620094
+  },
+  "TAb": {
+   "auroc": 0.6124599146683982,
+   "auprc": 0.173337137987028,
+   "f1": 0.22484496899379877,
+   "f1_oracle": 0.23954516740366394,
+   "n_pos": 2345,
+   "n": 21837,
+   "prev": 0.10738654434680939
+  },
+  "TInv": {
+   "auroc": 0.8005306425592099,
+   "auprc": 0.04230038892500346,
+   "f1": 0.08678237650200267,
+   "f1_oracle": 0.08678237650200267,
+   "n_pos": 294,
+   "n": 21837,
+   "prev": 0.013463388197124004
+  },
+  "MI": {
+   "auroc": 0.7410477204316898,
+   "auprc": 0.4678461424752548,
+   "f1": 0.0146948003014318,
+   "f1_oracle": 0.5069717554522702,
+   "n_pos": 5261,
+   "n": 21837,
+   "prev": 0.24092137813568115
+  },
+  "LVH": {
+   "auroc": 0.7013241012207508,
+   "auprc": 0.25334976980346846,
+   "f1": 0.21736526946107784,
+   "f1_oracle": 0.3011954665424624,
+   "n_pos": 2359,
+   "n": 21837,
+   "prev": 0.10802765935659409
+  },
+  "STD": {
+   "auroc": 0.4346862727482616,
+   "auprc": 0.04590291968650377,
+   "f1": 0.07713004484304933,
+   "f1_oracle": 0.0883460292443744,
+   "n_pos": 1009,
+   "n": 21837,
+   "prev": 0.04620597884058952
+  },
+  "STE": {
+   "auroc": 0.5234618080346908,
+   "auprc": 0.001469535163364745,
+   "f1": 0.0,
+   "f1_oracle": 0.0034061879080329264,
+   "n_pos": 28,
+   "n": 21837,
+   "prev": 0.0012822274584323168
+  },
+  "IIAVB": {
+   "auroc": 0.7816000157108163,
+   "auprc": 0.007025008131766573,
+   "f1": 0.02032520325203252,
+   "f1_oracle": 0.024793388429752067,
+   "n_pos": 14,
+   "n": 21837,
+   "prev": 0.0006411137292161584
+  },
+  "NSSTTA": {
+   "auroc": 0.45469376625740576,
+   "auprc": 0.018212143694642066,
+   "f1": 0.034242862305746295,
+   "f1_oracle": 0.04601932811780948,
+   "n_pos": 381,
+   "n": 21837,
+   "prev": 0.017447451129555702
+  },
+  "LAE": {
+   "auroc": 0.571083244823109,
+   "auprc": 0.02373867319805886,
+   "f1": 0.05087351502445842,
+   "f1_oracle": 0.051919446192573944,
+   "n_pos": 427,
+   "n": 21837,
+   "prev": 0.01955396868288517
+  },
+  "RAH": {
+   "auroc": 0.7850257102258207,
+   "auprc": 0.03136468081826947,
+   "f1": 0.09523809523809523,
+   "f1_oracle": 0.09523809523809523,
+   "n_pos": 99,
+   "n": 21837,
+   "prev": 0.004533589817583561
+  },
+  "RVH": {
+   "auroc": 0.8297130852402373,
+   "auprc": 0.0473071409984915,
+   "f1": 0.05128205128205128,
+   "f1_oracle": 0.10555555555555556,
+   "n_pos": 126,
+   "n": 21837,
+   "prev": 0.005770023446530104
+  },
+  "SVT": {
+   "auroc": 0.9872399680744477,
+   "auprc": 0.063981283893994,
+   "f1": 0.08130081300813008,
+   "f1_oracle": 0.10888252148997135,
+   "n_pos": 27,
+   "n": 21837,
+   "prev": 0.0012364336289465427
+  }
+ },
+ "prompts": {
+  "164889003": {
+   "abbr": "AF",
+   "source": "CKEPE:AFIB",
+   "text": "Atrial Fibrillation, Paroxysmal Atrial Fibrillation, Persistent Atrial Fibrillation, Long-standing Persistent Atrial Fibrillation, Permanent Atrial Fibrillation."
+  },
+  "164890007": {
+   "abbr": "AFL",
+   "source": "CKEPE:AFLT",
+   "text": "atrial flutter, atrial flutter with variable block, atrial flutter with 2:1 block, atrial flutter with 3:1 block, typical atrial flutter, atypical atrial flutter."
+  },
+  "6374002": {
+   "abbr": "BBB",
+   "source": "name (no CKEPE entry)",
+   "text": "bundle branch block"
+  },
+  "426627000": {
+   "abbr": "Brady",
+   "source": "name (no CKEPE entry)",
+   "text": "bradycardia"
+  },
+  "164909002": {
+   "abbr": "LBBB",
+   "source": "CKEPE:LBBB",
+   "text": "left bundle branch block, left bundle branch block (LBBB), left anterior fascicular block, left posterior fascicular block, bifascicular block (LBBB + RBBB), trifascicular block (LBBB + RBBB + LPHB)."
+  },
+  "59118001": {
+   "abbr": "RBBB",
+   "source": "CKEPE:RBBB",
+   "text": "right bundle branch block, complete right bundle branch block, incomplete right bundle branch block, RBBB pattern on ECG, RBBB with left anterior fascicular block."
+  },
+  "270492004": {
+   "abbr": "IAVB",
+   "source": "CKEPE:1AVB",
+   "text": "first degree AV block, first-degree atrioventricular block."
+  },
+  "713426002": {
+   "abbr": "IRBBB",
+   "source": "CKEPE:IRBBB",
+   "text": "incomplete right bundle branch block, incomplete right bundle branch block type I, incomplete right bundle branch block type II."
+  },
+  "39732003": {
+   "abbr": "LAD",
+   "source": "CKEPE:ALS",
+   "text": "Axis left shift, Left axis deviation, Leftward shift of the electrical axis."
+  },
+  "445118002": {
+   "abbr": "LAnFB",
+   "source": "CKEPE:LAFB",
+   "text": "left anterior fascicular block, left anterior hemiblock, left bundle branch block (LAFB), first-degree LAFB, type I LAFB."
+  },
+  "251146004": {
+   "abbr": "LQRSV",
+   "source": "CKEPE:LVOLT",
+   "text": "low QRS voltages in the frontal and horizontal leads, low QRS voltage, low QRS amplitude, reduced QRS amplitude in frontal and horizontal leads."
+  },
+  "698252002": {
+   "abbr": "NSIVCB",
+   "source": "CKEPE:IVCD",
+   "text": "non-specific intraventricular conduction disturbance, non-specific intraventricular conduction defect, non-specific intraventricular block."
+  },
+  "426783006": {
+   "abbr": "NSR",
+   "source": "CKEPE:SR",
+   "text": "Sinus Rhythm, Normal Sinus Rhythm, Sinus Node Dysfunction, Sinus Bradycardia, Sinus Tachycardia."
+  },
+  "63593006": {
+   "abbr": "SVPB",
+   "source": "CKEPE:PAC",
+   "text": "atrial premature complex, atrial premature beat, atrial ectopic beat, supraventricular premature complex."
+  },
+  "10370003": {
+   "abbr": "PR",
+   "source": "CKEPE:PACE",
+   "text": "normal functioning artificial pacemaker, normal functioning permanent artificial cardiac pacemaker, normal functioning temporary artificial cardiac pacemaker."
+  },
+  "17338001": {
+   "abbr": "VPB",
+   "source": "CKEPE:VPB",
+   "text": "ventricular premature beat, ventricular premature complexes, ventricular ectopic beats, ventricular extrasystoles."
+  },
+  "164947007": {
+   "abbr": "LPR",
+   "source": "CKEPE:LPR",
+   "text": "Prolonged PR interval, prolonged PR segment, first-degree atrioventricular block."
+  },
+  "111975006": {
+   "abbr": "LQT",
+   "source": "CKEPE:LNGQT",
+   "text": "long QT-interval, prolonged QT interval, congenital long QT syndrome, acquired long QT syndrome, Romano-Ward syndrome, Jervell and Lange-Nielsen syndrome."
+  },
+  "164917005": {
+   "abbr": "QAb",
+   "source": "CKEPE:AQW",
+   "text": "abnormal Q wave, anterior Q wave, posterior Q wave, lateral Q wave, septal Q wave."
+  },
+  "47665007": {
+   "abbr": "RAD",
+   "source": "CKEPE:ARS",
+   "text": "Axis right shift, Right axis deviation, Rightward axis deviation, Rightward displacement of the mean electrical axis."
+  },
+  "427393009": {
+   "abbr": "SA",
+   "source": "CKEPE:SARRH",
+   "text": "sinus arrhythmia, sinus arrhythmias, sinus rhythm irregularity, wandering atrial pacemaker."
+  },
+  "426177001": {
+   "abbr": "SB",
+   "source": "CKEPE:SB",
+   "text": "Sinus Bradycardia, Sinus bradycardia, sinus bradycardic rhythm."
+  },
+  "427084000": {
+   "abbr": "STach",
+   "source": "CKEPE:STACH",
+   "text": "sinus tachycardia, supraventricular tachycardia, atrial tachycardia, junctional tachycardia."
+  },
+  "164934002": {
+   "abbr": "TAb",
+   "source": "CKEPE:TAB",
+   "text": "t-wave abnormality, T-wave changes, non-diagnostic T-waves, non-diagnostic T abnormalities."
+  },
+  "59931005": {
+   "abbr": "TInv",
+   "source": "CKEPE:INVT",
+   "text": "inverted T-waves, inverted T-wave changes, inverted T-wave pattern, inverted T-waves in leads V1-V3, inverted T-waves in leads II, III and aVL."
+  },
+  "164865005": {
+   "abbr": "MI",
+   "source": "CKEPE:MI",
+   "text": "myocardial infarction, anterior myocardial infarction, anterolateral myocardial infarction, anteroseptal myocardial infarction, inferior myocardial infarction, inferolateral myocardial infarction, inferoposterolateral myocardial infarction, inferoposterior myocardial infarction, lateral myocardial infarction, posterior myocardial infarction, right ventricular myocardial infarction, subendocardial myocardial infarction."
+  },
+  "164873001": {
+   "abbr": "LVH",
+   "source": "CKEPE:LVH",
+   "text": "left ventricular hypertrophy, left ventricular hypertrophy with strain pattern, asymmetric septal hypertrophy, concentric left ventricular hypertrophy, eccentric left ventricular hypertrophy."
+  },
+  "429622005": {
+   "abbr": "STD",
+   "source": "CKEPE:STD",
+   "text": "non-specific ST depression, non-specific ST segment depression, diffuse ST depression, widespread ST depression."
+  },
+  "164931005": {
+   "abbr": "STE",
+   "source": "CKEPE:STE",
+   "text": "ST elevation - probable extension, ST elevation myocardial infarction, ST segment elevation in anterior leads, ST segment elevation in lateral leads, ST segment elevation in inferior leads."
+  },
+  "55827005": {
+   "abbr": "LVHV",
+   "source": "CKEPE:VCLVH",
+   "text": "voltage criteria (QRS) for left ventricular hypertrophy, voltage criteria for left ventricular hypertrophy, QRS complex changes for left ventricular hypertrophy."
+  },
+  "195042002": {
+   "abbr": "IIAVB",
+   "source": "CKEPE:2AVB",
+   "text": "second degree AV block, Mobitz type I second degree AV block, Mobitz type II second degree AV block."
+  },
+  "233917008": {
+   "abbr": "AVB",
+   "source": "CKEPE:AVB",
+   "text": "AV block, atrioventricular block, a-v block, second-degree AV block, third-degree AV block."
+  },
+  "428750005": {
+   "abbr": "NSSTTA",
+   "source": "CKEPE:NST",
+   "text": "non-specific ST changes, non-specific ST segment changes, non-specific ST elevation, non-specific ST depression."
+  },
+  "67741000119109": {
+   "abbr": "LAE",
+   "source": "CKEPE:LAO/LAE",
+   "text": "left atrial overload, left atrial enlargement, left atrial hypertrophy, left atrial dilatation."
+  },
+  "446358003": {
+   "abbr": "RAH",
+   "source": "CKEPE:RAH",
+   "text": "right atrial hypertrophy, right atrial enlargement, right atrial dilatation."
+  },
+  "89792004": {
+   "abbr": "RVH",
+   "source": "CKEPE:RVH",
+   "text": "right ventricle hypertrophy, right ventricular hypertrophy, cor pulmonale, idiopathic pulmonary hypertension-related right ventricular hypertrophy, chronic thromboembolic pulmonary hypertension-related right ventricular hypertrophy."
+  },
+  "713422000": {
+   "abbr": "ATach",
+   "source": "CKEPE:AT",
+   "text": "Atrial Tachycardia, Atrial Tachycardia with block, Atrial Tachycardia with flutter waves, Orthodromic Atrial Tachycardia, Antidromic Atrial Tachycardia."
+  },
+  "426761007": {
+   "abbr": "SVT",
+   "source": "CKEPE:SVT",
+   "text": "Supraventricular Tachycardia, Supraventricular tachyarrhythmia, Atrial tachycardia, Junctional tachycardia, Atrioventricular nodal reentrant tachycardia (AVNRT), Atrioventricular reciprocating tachycardia (AVRT), Wolff-Parkinson-White syndrome."
+  },
+  "251198002": {
+   "abbr": "CCR",
+   "source": "CKEPE:CR",
+   "text": "clockwise rotation, counterclockwise rotation."
+  },
+  "251199005": {
+   "abbr": "CCWR",
+   "source": "CKEPE:CCR",
+   "text": "counter-clockwise rotation, counterclockwise axis deviation, left axis deviation."
+  },
+  "164912004": {
+   "abbr": "PWC",
+   "source": "CKEPE:PWC",
+   "text": "P wave Change, P-wave changes, P-wave abnormalities, P-wave elevation, P-wave depression."
+  },
+  "164930006": {
+   "abbr": "STIAb",
+   "source": "name (no CKEPE entry)",
+   "text": "ST interval abnormal"
+  },
+  "164937009": {
+   "abbr": "UAb",
+   "source": "CKEPE:UW",
+   "text": "U wave, U-waves, abnormal U waves, prominent U waves."
+  }
+ },
+ "input_spec": {
+  "fs": 500,
+  "samples": 5000,
+  "leads": "I,II,III,aVR,aVF,aVL,V1-V6",
+  "norm": "global min-max [0,1] per 10 s window",
+  "source": "our 100 Hz 0.5-45 Hz band-passed mV, upsampled x5 (resample_poly)"
+ },
+ "val": {
+  "n": 6582,
+  "metrics": {
+   "auroc": 0.741156753179213,
+   "auprc": 0.16778166756382645,
+   "f1": 0.1262007464240961,
+   "f1_oracle": 0.2223164534007952,
+   "n_labels": 43
+  }
+ },
+ "notes": {
+  "method": "MERL zero-shot (Liu et al., ICML 2024, arXiv 2403.06659), official code and released checkpoint, no training or fine-tuning on any of our data.",
+  "pretraining_data": "MIMIC-IV-ECG v1.0 (BIDMC, Boston; 771,693 ECG-report pairs, 500 Hz, 10 s). It shares no records with our databases (CPSC2018/CPSC-Extra, PTB-XL, Georgia, Shaoxing/Ningbo), which come from other hospitals and countries.",
+  "checkpoint_selection_caveat": "The released *_best_ckpt.pth was selected during pretraining by the average zero-shot AUROC on the validation splits of PTB-XL (super/sub/form/rhythm), CPSC2018 (ICBEB) and Chapman-Shaoxing (CSN) (see utils/utils_trainer.py and pretrain/config.yaml val_sets). Those are part of our CPSC, PTBXL and SHAONING test sets. MERL never trained on them, but it was model-selected on them, and its CKEPE prompts were written for their class names. GEORGIA was never used.",
+  "paper_eval": "The paper evaluates zero-shot on PTB-XL (4 subsets), CPSC2018 and CSN test splits, with dataset-specific label sets. Our evaluation uses our SNOMED vocabulary and protocol, so the numbers are not comparable to the paper's."
+ },
+ "minutes": 9.622729961077372
+}
