@@ -1,7 +1,7 @@
 %=====================================================================
 \section{Results}\label{sec:results}
 %=====================================================================
-All numbers in this section are produced by the aggregation scripts from the logged run files of the 153 training runs (Section~\ref{sec:impl}); means and standard deviations are over three seeds unless stated otherwise.
+All numbers in this section are produced by the aggregation scripts from the logged run files of the 229 training runs and the MERL inference outputs (Section~\ref{sec:impl}); means and standard deviations are over three seeds unless stated otherwise.
 
 \subsection{Seen diagnoses under leave-one-database-out}\label{sec:res_seen}
 Table~\ref{tab:loso} reports macro AUROC and AUPRC over seen diagnoses for each held-out database and each method, and Fig.~\ref{fig:seeds} shows every individual run. Averaged over the four held-out databases, the proposed method obtains the highest macro AUROC ($86.6_{\pm0.1}$) and the highest macro AUPRC ($33.0_{\pm0.2}$) of all methods. The strongest baselines are the two label-handling methods without a domain-generalization component, masked loss and Li-style masking ($86.3$ each), followed by the four DG methods ($86.1$ for CORAL, GroupDRO and MixStyle; $85.6$ for DANN) and naive pooling ($85.6$). The ordering of the baselines already illustrates the first part of RQ1: ignoring unannotated entries instead of treating them as negatives raises macro AUROC by 0.7 points and AUPRC by 0.6 points, and none of the DG penalties improves on masking alone.

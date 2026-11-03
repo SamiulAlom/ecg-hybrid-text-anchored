@@ -43,3 +43,6 @@ ecg_paper_*.pdf
 # credentials (never commit)
 kaggle.json
 *.env
+
+# journal submission package (cover letter, reviewers)
+submission_aiim/
