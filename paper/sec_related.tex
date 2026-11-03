@@ -1,0 +1,53 @@
+%=====================================================================
+\section{Related work}\label{sec:related}
+%=====================================================================
+
+We organize prior work into four families. For each we state its core idea, the assumption on which it rests, and the point at which that assumption fails for a pool of public ECG databases with different annotation vocabularies. Table~\ref{tab:related} summarizes the comparison.
+
+\subsection{Deep learning for 12-lead ECG classification}\label{sec:rel_arch}
+The dominant line of work treats ECG interpretation as supervised multi-label classification of a fixed-length 12-lead signal and invests in the architecture. Convolutional and residual networks~\cite{he2016,hu2018se} underlie the cardiologist-level results of Hannun et al.~\cite{hannun2019} on single-lead ambulatory recordings and of Ribeiro et al.~\cite{ribeiro2020} on 12-lead ECGs; the PTB-XL benchmark of Strodthoff et al.~\cite{strodthoff2021} established residual and inception-style one-dimensional networks as strong defaults. Winning entries of the PhysioNet/CinC 2020 and 2021 Challenges added lead weighting, attention and ensembling on top of residual backbones~\cite{zhao2020cinc,nejedly2021}, and recent proposals combine multi-branch feature fusion~\cite{sharan2025}, multi-scale temporal fusion with lead-graph attention~\cite{zhou_leadgraph2026}, or prototype-based case retrieval for interpretability~\cite{sethi2025proto}. The implicit assumption of this family is that the training label matrix is complete: every zero is a negative, and the test distribution is the training distribution. Both parts fail in our setting. When several public databases are pooled, zeros for diagnoses that a database does not code are not negatives, so the loss that these architectures minimize is misspecified irrespective of the backbone (Section~\ref{sec:why}). Moreover, even the Challenge-winning models, which did train on multiple sources, were selected and reported on a hidden test set that mixed the same sources, so their numbers do not characterize transfer to a database that contributed no training data~\cite{reyna2022}. Our work keeps a standard residual backbone deliberately, so that any difference between methods can be attributed to the label handling and the classification head rather than to architectural capacity, and it evaluates on held-out databases.
+
+\subsection{Learning with partial and heterogeneous labels}\label{sec:rel_partial}
+Partial-label learning starts from the observation that in multi-label data only a subset of labels is observed for each sample. Durand et al.~\cite{durand2019} showed that a convolutional network can be trained with a loss restricted to observed entries and that unobserved entries are better ignored or predicted than assumed negative; Ben-Baruch et al.~\cite{benbaruch2022} refined this with a class-aware selective loss that treats unobserved entries differently depending on the estimated likelihood of each class. Unobserved entries are also the unlabeled part of positive--unlabeled learning, which estimates class posteriors from positive and unlabeled data under an assumption on how positives are selected for labeling~\cite{elkan2008,kiryo2017}, and confidence-gated pseudo-labels from a teacher network are the standard device of semi-supervised learning~\cite{tarvainen2017,sohn2020fixmatch}; we evaluated such pseudo-labels on top of source-aware masking and found that they destabilize training when combined with implication completion (Appendix~
+ef{secA2}), so the final objective relies on masking alone rather than on an assumed labeling mechanism. The assumption is that the set of observed labels is drawn independently of the input, which holds for the random masking used to simulate partial annotation on image benchmarks. In pooled ECG databases the missingness pattern is instead deterministic given the source: a recording from a database that never codes left-axis deviation has that entry missing with certainty, and the source is itself recognizable from the signal. For ECG, Li et al.~\cite{li2024} were, to our knowledge, the first to address this structure explicitly, distinguishing dataset-related, super-type and sub-type missing labels in PhysioNet 2020/2021 data and proposing prediction masking together with a category mapping that recovers super-classes. Two limits remain. First, these methods operate inside a fixed label set with a weight vector per class, so a diagnosis that no training source annotates cannot be scored at all. Second, they are evaluated on test splits drawn from the training sources, so they do not establish whether handling missing labels correctly also removes the source shortcut that the missingness induces. We adopt masking and implication-based completion as a baseline (``Li-style'') and as the label handling of our method, and add to the per-class weights a text-anchored query head, so that unseen diagnoses become scorable; crucially, we evaluate on databases that contributed no training data.
+
+\subsection{Domain generalization for physiological signals}\label{sec:rel_dg}
+Domain generalization trains on several labeled source domains and aims at an unseen target domain. The main strategies align feature distributions across sources adversarially~\cite{ganin2016} or through second-order statistics~\cite{sun2016coral}, perturb feature statistics so that the network cannot rely on them~\cite{zhou2021mixstyle}, or minimize the worst-case risk over groups~\cite{sagawa2020}. Ballas and Diou~\cite{ballas2022} applied this idea to 12-lead ECG, reporting out-of-distribution classification across the PhysioNet 2021 sources with a convolutional network. The assumption shared by these methods is that all domains share one fully observed label space, so that a feature that separates the domains carries no label information and can be suppressed. In heterogeneously annotated ECG databases this assumption is violated in a specific way: because the label vocabulary is a function of the source, the source identity \emph{is} predictive of the naive targets, and aligning or perturbing source statistics works against the very objective being minimized. Domain generalization is therefore complementary rather than sufficient; we use MixStyle as one component of our method and compare against CORAL, DANN, GroupDRO and MixStyle each combined with the Li-style label handling, so that the effect of the label objective and the effect of distribution alignment are separated.
+
+\subsection{Language-anchored classification}\label{sec:rel_lang}
+Contrastive language--image pretraining~\cite{radford2021} showed that classes can be represented by text embeddings rather than by trained weight vectors, which enables zero-shot recognition of classes named at test time. In multi-label vision, transformer decoders that use one learned query per class~\cite{liu2021q2l,ridnik_mldecoder} improve over global pooling by letting each class attend to its own spatial evidence. ECG--language models transfer the first idea to physiological signals: MERL~\cite{merl2024} aligns ECGs with clinical reports and enhances zero-shot prompts with clinical knowledge at test time, SuPreME~\cite{suprime2025} extracts clinical entities from reports with a large language model to supervise pretraining, and MELP~\cite{melp2025} aligns signals and reports at several temporal scales; all three report zero-shot classification on public databases. Their assumption is the availability of a large corpus of ECGs paired with free-text reports and the compute to pretrain on it. Most public 12-lead databases provide categorical SNOMED-CT codes rather than reports, so this supervision is inaccessible to report-based pretraining, and these models do not represent which diagnoses each source annotates. We borrow the two mechanisms, text-defined classes and per-class queries, but anchor the queries in a frozen biomedical concept encoder~\cite{remy_biolord} applied to curated, guideline-based descriptions~\cite{kligfield2007,surawicz2009}. This removes the need for report-paired pretraining, makes the label space explicit, and lets the model be trained directly with the categorical labels that the databases carry, under an objective that knows which labels each source observes. Our approach is complementary: it does not require report-paired pretraining, and a report-pretrained encoder could be used as its initialization; we do not compare against these models empirically (Section~
+ef{sec:limitations}).
+
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Comparison of representative prior work with this work. Columns: MD, trained on several databases; SV, source-specific label vocabularies modeled; UD, evaluated on a database that contributed no training data; OV, classes defined by text (open vocabulary); RP, requires report-paired pretraining; ECG, ECG-specific method. \yes{} and \no{} are given where the cited work states them; -- otherwise.}\label{tab:related}
+\begin{tabularx}{\textwidth}{@{}l l Y Y Y Y Y Y@{}}
+\toprule
+Family & Work & MD & SV & UD & OV & RP & ECG \\
+\midrule
+\multirow{4}{*}{Architectures}
+ & Strodthoff et al.~\cite{strodthoff2021} & \no & \no & \no & \no & \no & \yes \\
+ & Zhao et al.~\cite{zhao2020cinc} & \yes & \no & \na & \no & \no & \yes \\
+ & Nejedly et al.~\cite{nejedly2021} & \yes & \no & \na & \no & \no & \yes \\
+ & Zhou and Li~\cite{zhou_leadgraph2026} & \na & \no & \na & \no & \no & \yes \\
+\midrule
+\multirow{3}{*}{Partial labels}
+ & Durand et al.~\cite{durand2019} & \no & \no & \no & \no & \no & \no \\
+ & Ben-Baruch et al.~\cite{benbaruch2022} & \no & \no & \no & \no & \no & \no \\
+ & Li et al.~\cite{li2024} & \yes & \yes & \no & \no & \no & \yes \\
+\midrule
+\multirow{4}{*}{Domain generalization}
+ & Ganin et al.~\cite{ganin2016} & \yes & \no & \yes & \no & \no & \no \\
+ & Sun and Saenko~\cite{sun2016coral} & \na & \no & \na & \no & \no & \no \\
+ & Zhou et al.~\cite{zhou2021mixstyle} & \yes & \no & \yes & \no & \no & \no \\
+ & Ballas and Diou~\cite{ballas2022} & \yes & \no & \yes & \no & \no & \yes \\
+\midrule
+\multirow{3}{*}{ECG--language}
+ & MERL~\cite{merl2024} & \na & \no & \yes & \yes & \yes & \yes \\
+ & SuPreME~\cite{suprime2025} & \na & \no & \yes & \yes & \yes & \yes \\
+ & MELP~\cite{melp2025} & \na & \no & \yes & \yes & \yes & \yes \\
+\midrule
+ & This work & \yes & \yes & \yes & \yes & \no & \yes \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,101 @@
+%Version 3.1 December 2024 -- Springer Nature LaTeX template (sn-jnl)
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{bm}%
+\usepackage{bbm}%
+\usepackage{longtable}%
+\usepackage{tabularx}%
+\usepackage{array}%
+\usepackage[section]{placeins}%
+\usepackage{rotating}%
+
+%% Placeholder for numbers that will be filled from logged experiment results only.
+\newcommand{\RES}[1]{\textcolor{red}{[#1]}}
+%% Comparison-table symbols.
+\newcommand{\yes}{$\checkmark$}
+\newcommand{\no}{$\times$}
+\newcommand{\na}{--}
+%% Column type for tabularx with centred content.
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+%% Shorthands.
+\newcommand{\Lann}{\mathcal{L}_{\mathrm{ann}}}
+
+
+%% Theorem-like environments (styles defined by sn-jnl.cls).
+\theoremstyle{thmstyleone}%
+\newtheorem{proposition}{Proposition}%
+\theoremstyle{thmstyletwo}%
+\newtheorem{remark}{Remark}%
+
+\raggedbottom
+
+\begin{document}
+
+\title[Hybrid text-anchored learning from heterogeneously annotated ECG databases]{Hybrid text-anchored learning from heterogeneously annotated ECG databases for cross-database and open-vocabulary 12-lead ECG diagnosis}
+
+%% TODO(author): confirm names, affiliations and corresponding e-mail.
+\author*[1]{\fnm{Samiul} \sur{Alom}}\email{\RES{corresponding e-mail}}
+
+\affil*[1]{\orgdiv{\RES{Department}}, \orgname{\RES{Institution}}, \orgaddress{\city{\RES{City}}, \country{\RES{Country}}}}
+
+\abstract{\textbf{Purpose:} Public 12-lead electrocardiogram (ECG) databases each annotate a different subset of diagnoses, so pooling them for scale silently turns ``never coded here'' into ``absent'' and rewards models for recognizing the source database. We study whether a model can learn only from the labels each source observes, transfer to a database that contributed no training data, and score diagnoses for which no training label exists. \textbf{Methods:} We propose a hybrid classifier in which a one-dimensional squeeze-and-excitation residual encoder is read by two heads: a linear head with one weight vector per diagnosis, and a text-anchored label-query head in which frozen embeddings of short guideline-based diagnosis descriptions cross-attend to the ECG tokens and are scored by cosine similarity, so that it has no diagnosis-specific weights. Diagnoses annotated in training are scored by the mean of both heads, unannotated diagnoses by the text head alone. Both heads are trained with an asymmetric loss restricted to source-annotated entries, with clinical implication completion and weight averaging. We evaluate leave-one-database-out over four public databases from three countries (87{,}661 recordings, 43 diagnoses), separating diagnoses seen in training from those annotated only in the held-out database, and in a controlled annotation-removal experiment on PTB-XL, against seven label-handling and domain-generalization baselines trained under identical conditions, with three seeds each. \textbf{Results:} On seen diagnoses the method obtained the highest mean macro AUROC (86.6) and AUPRC (33.0); it was significantly better than six of the seven baselines across folds and seeds (Holm-adjusted Wilcoxon $p\le0.014$) and level with the masked-loss baseline ($+0.25$ points, $p=0.052$). Masking unannotated entries improved on naive pooling by 0.7 points, whereas no domain-generalization method improved on masking. On five diagnoses that no training database annotated, the method reached a macro AUROC of 67.0 where all baselines were at chance (51--53), and on diagnoses removed from PTB-XL training it reached 66.6--69.0 against 47--56. \textbf{Conclusion:} Correct handling of missing annotation matters more for cross-database ECG transfer than domain-generalization penalties, and a hybrid text-anchored head adds the ability to score unlabeled diagnoses from a description without loss of accuracy on labeled ones.}
+
+\keywords{Electrocardiogram, Multi-source learning, Partial labels, Domain generalization, Text-anchored label embeddings, Open-vocabulary diagnosis}
+
+\maketitle
+
+\input{sec_intro}
+\input{sec_related}
+\input{sec_methods}
+\input{sec_setup}
+\input{sec_results}
+\input{sec_discussion}
+
+\backmatter
+
+\bmhead{Acknowledgements}
+We thank the PhysioNet/Computing in Cardiology Challenge organizers and the contributing institutions for
+releasing their data~\cite{goldberger2000,perez2020,reyna2022}.
+
+\section*{Declarations}
+\begin{itemize}
+\item \textbf{Funding:} \RES{to be completed by the author}.
+\item \textbf{Conflict of interest:} The authors declare no competing interests.
+\item \textbf{Ethics approval and consent to participate:} Not applicable. This study used only publicly
+available, de-identified data released under open licenses.
+\item \textbf{Consent for publication:} Not applicable.
+\item \textbf{Data availability:} All databases are public: PTB-XL~\cite{wagner2020}, CPSC2018 and CPSC-Extra~\cite{liu_cpsc2018}, Georgia and the other
+PhysioNet/CinC 2020 sources~\cite{perez2020}, and the Shaoxing--Ningbo database~\cite{zheng2020,zheng2022ningbo}.
+\item \textbf{Code availability:} \RES{repository URL}. The repository contains the preprocessing, training, baseline and aggregation code, the frozen diagnosis descriptions, and the exact split seeds.
+\item \textbf{Use of AI tools:} An AI assistant (Claude, Anthropic) was used for code development and language
+editing. The author designed, verified and takes full responsibility for all content and results.
+\item \textbf{Author contribution:} \RES{to be completed}.
+\end{itemize}
+
+\begin{appendices}
+\section{Diagnosis descriptions and label rules}\label{secA1}
+Table~\ref{tab:rules} lists the seven clinical implication rules used for label completion and the four official PhysioNet/CinC 2021 code equivalences applied to all methods. The full diagnosis vocabulary with its SNOMED-CT codes and the frozen text descriptions used as label anchors is given in Supplementary Table~S1.
+%% tab_rules.tex places two tabulars side by side; sn-jnl's threeparttable wrapper fits the caption to the first
+%% tabular only, so the generated file is typeset with the original LaTeX table environment.
+\begingroup\let\table\tableorg\let\endtable\endtableorg
+\input{tab_rules}
+\endgroup
+\input{app_development}
+\end{appendices}
+
+\bibliography{references}
+
+\end{document}

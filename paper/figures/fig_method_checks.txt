@@ -1,0 +1,15 @@
+Figure QA — fig_method
+
+PASS — Compiled as a one-page vector PDF with pdflatex.
+PASS — PDF page is approximately 17.0 cm wide × 12.5 cm tall; no content is clipped at the canvas edges.
+PASS — Inspected the PDF render at 100% and 300 dpi; no text overlaps boxes, arrows, or other text.
+PASS — All panel titles and the complete evaluation strip are visible.
+PASS — Orthogonal arrows avoid boxes; cross-attention points from ECG tokens into the decoder; dashed EMA arrow avoids the model and probability boxes.
+PASS — The EMA label sits on its dashed route; q_c = MLP(t_c) sits beside the text-anchor route.
+PASS — Box titles are 8 pt bold; body text and formula scripts are at least 7 pt; automatic word hyphenation is disabled.
+PASS — Encoder stages and MixStyle are visible inside the encoder; the ECG-token/decoder gap is at least 3 mm.
+PASS — Panel (c) losses and total objective are fully visible; loss boxes have 2.5 mm gaps.
+PASS — Panel (a) has AF, RBBB, TAb, SB columns; CPSC TAb is unknown throughout, PTB-XL is fully annotated, and Shaoxing-Ningbo has one illustrative unknown SB cell.
+PASS — fig_method.png is 4016 × 2953 pixels with 600 dpi metadata.
+
+NOTE — A 12.5 cm canvas height was used to fit all required content at the specified type sizes without overlaps. The requested four diagnosis columns were retained.

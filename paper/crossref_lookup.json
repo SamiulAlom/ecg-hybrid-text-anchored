@@ -1,0 +1,226 @@
+{
+ "li2024": {
+  "doi": "10.1016/j.patcog.2024.110321",
+  "title": "Learning with incomplete labels of multisource datasets for ECG classification",
+  "venue": "Pattern Recognition",
+  "year": 2024,
+  "match": true
+ },
+ "reyna2022": {
+  "doi": "10.1088/1361-6579/ac79fd",
+  "title": "Issues in the automated classification of multilead ecgs using heterogeneous labels and populations",
+  "venue": "Physiological Measurement",
+  "year": 2022,
+  "match": true
+ },
+ "liu_cpsc2018": {
+  "doi": "10.1166/jmihi.2018.2442",
+  "title": "An Open Access Database for Evaluating the Algorithms of Electrocardiogram Rhythm and Morphology Abnormality Detection",
+  "venue": "Journal of Medical Imaging and Health Informatics",
+  "year": 2018,
+  "match": true
+ },
+ "strodthoff2021": {
+  "doi": "10.1109/jbhi.2020.3022989",
+  "title": "Deep Learning for ECG Analysis: Benchmarks and Insights from PTB-XL",
+  "venue": "IEEE Journal of Biomedical and Health Informatics",
+  "year": 2021,
+  "match": true
+ },
+ "zheng2020": {
+  "doi": "10.1038/s41597-020-0386-x",
+  "title": "A 12-lead electrocardiogram database for arrhythmia research covering more than 10,000 patients",
+  "venue": "Scientific Data",
+  "year": 2020,
+  "match": true
+ },
+ "zheng2022ningbo": {
+  "doi": "10.3390/s25185621",
+  "title": "Arrhythmia Classification with Single-Channel Features Extracted from \u201cA Large-Scale 12-Lead ECG Database for Arrhythmia Study\u201d",
+  "venue": "Sensors",
+  "year": 2025,
+  "match": false
+ },
+ "zhao2020cinc": {
+  "doi": "10.22489/cinc.2020.112",
+  "title": "Adaptive lead weighted ResNet trained with different duration signals for classifying 12-lead ECGs",
+  "venue": "Computing in Cardiology Conference (CinC)",
+  "year": 2020,
+  "match": true
+ },
+ "nejedly2021": {
+  "doi": "10.23919/cinc53138.2021.9662723",
+  "title": "Classification of ECG Using Ensemble of Residual CNNs with Attention Mechanism",
+  "venue": "2021 Computing in Cardiology (CinC)",
+  "year": 2021,
+  "match": true
+ },
+ "ridnik_asl": {
+  "doi": "10.1109/mlcipr68329.2025.11407310",
+  "title": "Online Multi-Label Classification with Asymmetric Loss",
+  "venue": "2025 International Conference on Machine Learning, Computational Intelligence and Pattern Recognition (MLCIPR)",
+  "year": 2025,
+  "match": false
+ },
+ "remy_biolord": {
+  "doi": "10.1093/jamia/ocae029",
+  "title": "BioLORD-2023: semantic textual representations fusing large language models and clinical knowledge graph insights",
+  "venue": "Journal of the American Medical Informatics Association",
+  "year": 2024,
+  "match": true
+ },
+ "surawicz2009": {
+  "doi": "10.1161/circulationaha.108.191095",
+  "title": "AHA/ACCF/HRS Recommendations for the Standardization and Interpretation of the Electrocardiogram",
+  "venue": "Circulation",
+  "year": 2009,
+  "match": true
+ },
+ "kligfield2007": {
+  "doi": "10.1016/j.hrthm.2007.01.028",
+  "title": "Recommendations for the standardization and interpretation of the electrocardiogram",
+  "venue": "Heart Rhythm",
+  "year": 2007,
+  "match": true
+ },
+ "durand2019": {
+  "doi": "10.1109/cvpr.2019.00074",
+  "title": "Learning a Deep ConvNet for Multi-Label Classification With Partial Labels",
+  "venue": "2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "year": 2019,
+  "match": true
+ },
+ "benbaruch2022": {
+  "doi": "10.1109/cvpr52688.2022.00472",
+  "title": "Multi-label Classification with Partial Annotations using Class-aware Selective Loss",
+  "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "year": 2022,
+  "match": true
+ },
+ "ganin2016": {
+  "doi": "10.2139/ssrn.4890424",
+  "title": "Domain-Adversarial Training of Neural Networks for Enhancing\u00a0Nirs Model Transfer",
+  "venue": "",
+  "year": 2024,
+  "match": true
+ },
+ "sun2016coral": {
+  "doi": "10.1007/978-3-319-49409-8_35",
+  "title": "Deep CORAL: Correlation Alignment for Deep Domain Adaptation",
+  "venue": "Lecture Notes in Computer Science",
+  "year": 2016,
+  "match": true
+ },
+ "ridnik_mldecoder": {
+  "doi": "10.1109/wacv56688.2023.00012",
+  "title": "ML-Decoder: Scalable and Versatile Classification Head",
+  "venue": "2023 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+  "year": 2023,
+  "match": true
+ },
+ "hu2018se": {
+  "doi": "10.2139/ssrn.6751875",
+  "title": "Residual Squeeze and Excitation Networks for Robust Facial Emotion Recognition",
+  "venue": "",
+  "year": 2026,
+  "match": false
+ },
+ "he2016": {
+  "doi": "10.1109/cvpr.2016.90",
+  "title": "Deep Residual Learning for Image Recognition",
+  "venue": "2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "year": 2016,
+  "match": true
+ },
+ "ribeiro2020": {
+  "doi": "10.55277/researchhub.h3vhis4l.1",
+  "title": "Automatic diagnosis of the 12-lead ECG using a deep neural network",
+  "venue": "",
+  "year": 2025,
+  "match": true
+ },
+ "hannun2019": {
+  "doi": "10.1038/s41591-018-0268-3",
+  "title": "Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network",
+  "venue": "Nature Medicine",
+  "year": 2019,
+  "match": true
+ },
+ "delong1988": {
+  "doi": "10.2307/2531595",
+  "title": "Comparing the Areas under Two or More Correlated Receiver Operating Characteristic Curves: A Nonparametric Approach",
+  "venue": "Biometrics",
+  "year": 1988,
+  "match": true
+ },
+ "wagner2020": {
+  "doi": "10.1038/s41597-020-0495-6",
+  "title": "PTB-XL, a large publicly available electrocardiography dataset",
+  "venue": "Scientific Data",
+  "year": 2020,
+  "match": true
+ },
+ "perez2020": {
+  "doi": "10.22489/cinc.2020.236",
+  "title": "Classification of 12-lead ECGs: the PhysioNet/Computing in Cardiology Challenge 2020",
+  "venue": "Computing in Cardiology Conference (CinC)",
+  "year": 2020,
+  "match": true
+ },
+ "zhou_leadgraph2026": {
+  "doi": "10.1088/1361-6579/aeb225",
+  "title": "Multi-scale temporal feature fusion and lead-graph attention for multi-label classification of 12-lead ECGs",
+  "venue": "Physiological Measurement",
+  "year": 2026,
+  "match": true
+ },
+ "sharan2025": {
+  "doi": "10.1109/tim.2025.3614786",
+  "title": "Cardiac Abnormality Detection From 12-Lead ECG Using Multibranch CNN and Attention-Based Feature Fusion",
+  "venue": "IEEE Transactions on Instrumentation and Measurement",
+  "year": 2025,
+  "match": true
+ },
+ "goldberger2000": {
+  "doi": "10.1161/01.cir.101.23.e215",
+  "title": "PhysioBank, PhysioToolkit, and PhysioNet",
+  "venue": "Circulation",
+  "year": 2000,
+  "match": true
+ },
+ "zhou2021mixstyle": {
+  "doi": "10.2139/ssrn.5644210",
+  "title": "Domain Generalization of Tuberculosis Detection in Chest X-Rays through MixStyle and Multi-Level Augmentation",
+  "venue": "",
+  "year": 2025,
+  "match": false
+ },
+ "tarvainen2017": {
+  "doi": "10.1007/978-3-030-00889-5_2",
+  "title": "Deep Semi-supervised Segmentation with Weight-Averaged Consistency Targets",
+  "venue": "Lecture Notes in Computer Science",
+  "year": 2018,
+  "match": false
+ },
+ "radford2021": {
+  "doi": "10.1016/j.aquaeng.2024.102460",
+  "title": "CLIP-FSSC: A transferable visual model for fish and shrimp species classification based on natural language supervision",
+  "venue": "Aquacultural Engineering",
+  "year": 2024,
+  "match": false
+ },
+ "sagawa2020": {
+  "doi": "10.2139/ssrn.4299601",
+  "title": "On Generalization and Regularization via Wasserstein Distributionally Robust Optimization",
+  "venue": "SSRN Electronic Journal",
+  "year": 2022,
+  "match": false
+ },
+ "siontis2021": {
+  "doi": "10.1038/s41569-020-00503-2",
+  "title": "Artificial intelligence-enhanced electrocardiography in cardiovascular disease management",
+  "venue": "Nature Reviews Cardiology",
+  "year": 2021,
+  "match": true
+ }
+}

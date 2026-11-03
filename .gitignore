@@ -1,0 +1,43 @@
+# environments and tools
+.venv/
+.tools/
+__pycache__/
+*.pyc
+
+# data and large outputs
+data/
+prep/
+*.npy
+*_test.npz
+results/*
+!results/final/
+logs/
+*.zip
+
+# LaTeX build artefacts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+paper/*.pdf
+paper/figures/*_check.png
+paper/generated/*.png
+paper/bibtex.out
+paper/pdflatex.out
+paper/build*.log
+
+# internal notes and drafts
+RESEARCH_PLAN.md
+paper/REVIEW_Q1.md
+paper/figures/CODEX_*.md
+paper/template_reference.tex
+analysis/_fake/
+ecg_paper_*.pdf
+
+# credentials (never commit)
+kaggle.json
+*.env

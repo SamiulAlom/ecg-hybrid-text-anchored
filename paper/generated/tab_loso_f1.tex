@@ -1,0 +1,24 @@
+\begin{sidewaystable}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Leave-one-database-out macro F1 ($\times 100$) over seen labels, with thresholds tuned on source validation data (F1) and the oracle threshold on the target (F1$^{*}$, upper bound).}
+\label{tab:loso_f1}
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{2}{c}{CPSC} & \multicolumn{2}{c}{PTB-XL} & \multicolumn{2}{c}{Georgia} & \multicolumn{2}{c}{Shaoxing-Ningbo} & \multicolumn{2}{c}{Mean} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11}
+Method & F1 & F1$^{*}$ & F1 & F1$^{*}$ & F1 & F1$^{*}$ & F1 & F1$^{*}$ & F1 & F1$^{*}$ \\
+\midrule
+Naive (unknown = negative) & 23.4$_{\pm 0.4}$ & 32.1$_{\pm 0.3}$ & 31.2$_{\pm 0.6}$ & 41.5$_{\pm 0.3}$ & 32.1$_{\pm 0.6}$ & 41.1$_{\pm 0.4}$ & 26.1$_{\pm 0.5}$ & 33.5$_{\pm 0.4}$ & 28.2$_{\pm 0.4}$ & 37.1$_{\pm 0.1}$ \\
+Masked loss & 23.8$_{\pm 0.1}$ & 32.6$_{\pm 0.2}$ & 32.4$_{\pm 0.7}$ & 42.2$_{\pm 0.2}$ & \textbf{33.4}$_{\pm 0.6}$ & \textbf{41.4}$_{\pm 0.1}$ & \textbf{28.3}$_{\pm 0.2}$ & 34.6$_{\pm 0.3}$ & 29.5$_{\pm 0.2}$ & 37.7$_{\pm 0.1}$ \\
+Hierarchical mask (Li et al.) & 23.9$_{\pm 0.4}$ & 32.6$_{\pm 0.4}$ & 32.9$_{\pm 1.1}$ & 42.4$_{\pm 0.2}$ & 33.1$_{\pm 0.9}$ & 41.1$_{\pm 0.2}$ & 28.1$_{\pm 0.9}$ & 34.3$_{\pm 0.4}$ & 29.5$_{\pm 0.5}$ & 37.6$_{\pm 0.3}$ \\
+CORAL & 23.7$_{\pm 0.5}$ & 31.7$_{\pm 0.2}$ & 32.8$_{\pm 0.8}$ & 42.1$_{\pm 0.3}$ & 33.0$_{\pm 0.5}$ & 40.0$_{\pm 0.4}$ & 27.5$_{\pm 0.3}$ & 34.1$_{\pm 0.7}$ & 29.3$_{\pm 0.2}$ & 37.0$_{\pm 0.2}$ \\
+DANN & 23.8$_{\pm 0.5}$ & 31.8$_{\pm 0.4}$ & 32.7$_{\pm 1.2}$ & 41.8$_{\pm 0.3}$ & 33.3$_{\pm 1.0}$ & 39.9$_{\pm 0.4}$ & 26.8$_{\pm 0.8}$ & 33.3$_{\pm 0.1}$ & 29.2$_{\pm 0.4}$ & 36.7$_{\pm 0.2}$ \\
+GroupDRO & \textbf{25.6}$_{\pm 0.4}$ & \textbf{33.3}$_{\pm 0.5}$ & \textbf{32.9}$_{\pm 0.7}$ & 41.1$_{\pm 0.4}$ & 32.0$_{\pm 0.3}$ & 38.9$_{\pm 0.1}$ & 28.2$_{\pm 0.5}$ & 34.4$_{\pm 0.3}$ & \textbf{29.7}$_{\pm 0.3}$ & 36.9$_{\pm 0.1}$ \\
+MixStyle & 24.1$_{\pm 0.3}$ & 32.3$_{\pm 0.3}$ & 32.7$_{\pm 1.1}$ & 41.8$_{\pm 0.2}$ & 32.8$_{\pm 0.4}$ & 40.5$_{\pm 0.1}$ & 27.7$_{\pm 0.4}$ & 34.0$_{\pm 0.4}$ & 29.3$_{\pm 0.3}$ & 37.2$_{\pm 0.1}$ \\
+\midrule
+Ours & 23.8$_{\pm 0.4}$ & 33.1$_{\pm 0.5}$ & 32.9$_{\pm 0.2}$ & \textbf{42.5}$_{\pm 0.2}$ & 33.0$_{\pm 0.9}$ & 41.2$_{\pm 0.3}$ & 27.8$_{\pm 0.4}$ & \textbf{34.7}$_{\pm 0.5}$ & 29.4$_{\pm 0.2}$ & \textbf{37.9}$_{\pm 0.3}$ \\
+\bottomrule
+\end{tabular}
+\end{sidewaystable}

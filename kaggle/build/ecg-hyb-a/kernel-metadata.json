@@ -1,0 +1,17 @@
+{
+ "id": "samiulalom01/ecg-hyb-a",
+ "title": "ecg-hyb-a",
+ "code_file": "run.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [
+  "samiulalom01/ecg-paper-code"
+ ],
+ "kernel_sources": [
+  "samiulalom01/ecg-prep"
+ ],
+ "competition_sources": []
+}

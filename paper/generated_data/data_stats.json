@@ -1,0 +1,112 @@
+{
+ "n_records": 87661,
+ "vocab_size": 43,
+ "per_source": {
+  "CPSC": {
+   "records": 10328,
+   "fs": [
+    500.0
+   ],
+   "dur_min": 6.0,
+   "dur_median": 12.0,
+   "dur_max": 144.0,
+   "age_mean": 61.40160915083366,
+   "age_sd": 17.983940520759134,
+   "female_pct": 46.34972889233153,
+   "annotated": 24,
+   "labels_per_record": 1.0371804237365723
+  },
+  "PTBXL": {
+   "records": 21837,
+   "fs": [
+    500.0
+   ],
+   "dur_min": 10.0,
+   "dur_median": 10.0,
+   "dur_max": 10.0,
+   "age_mean": 59.540753806164126,
+   "age_sd": 16.757151512816193,
+   "female_pct": 47.89119384530842,
+   "annotated": 32,
+   "labels_per_record": 2.1623849868774414
+  },
+  "GEORGIA": {
+   "records": 10344,
+   "fs": [
+    500.0
+   ],
+   "dur_min": 5.0,
+   "dur_median": 10.0,
+   "dur_max": 10.0,
+   "age_mean": 60.486802376546215,
+   "age_sd": 15.434517453430903,
+   "female_pct": 46.33604021655066,
+   "annotated": 33,
+   "labels_per_record": 2.043213367462158
+  },
+  "SHAONING": {
+   "records": 45152,
+   "fs": [
+    500.0
+   ],
+   "dur_min": 10.0,
+   "dur_median": 10.0,
+   "dur_max": 10.0,
+   "age_mean": 58.20846176020578,
+   "age_sd": 19.688250888723122,
+   "female_pct": 43.57725017717931,
+   "annotated": 41,
+   "labels_per_record": 1.7836641073226929
+  }
+ },
+ "n_vocab_annotated_by_all": 18,
+ "n_scored_in_vocab": 25,
+ "n_scored_annotated_by_all": 12,
+ "pct_pos_in_partially_annotated": 27.85223388671875,
+ "pct_unknown_entries": 16.71828842163086,
+ "n_databases_annotating": {
+  "AF": 4,
+  "AFL": 4,
+  "BBB": 2,
+  "Brady": 1,
+  "LBBB": 4,
+  "RBBB": 4,
+  "IAVB": 4,
+  "IRBBB": 4,
+  "LAD": 3,
+  "LAnFB": 3,
+  "LQRSV": 3,
+  "NSIVCB": 3,
+  "NSR": 4,
+  "SVPB": 4,
+  "PR": 2,
+  "VPB": 3,
+  "LPR": 2,
+  "LQT": 3,
+  "QAb": 3,
+  "RAD": 3,
+  "SA": 4,
+  "SB": 4,
+  "STach": 4,
+  "TAb": 4,
+  "TInv": 3,
+  "MI": 3,
+  "LVH": 4,
+  "STD": 4,
+  "STE": 4,
+  "LVHV": 1,
+  "IIAVB": 4,
+  "AVB": 2,
+  "NSSTTA": 4,
+  "LAE": 2,
+  "RAH": 3,
+  "RVH": 4,
+  "ATach": 3,
+  "SVT": 3,
+  "CCR": 1,
+  "CCWR": 1,
+  "PWC": 1,
+  "STIAb": 3,
+  "UAb": 1
+ }
+}

@@ -1,0 +1,24 @@
+\begin{sidewaystable}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Leave-one-database-out results: macro AUROC and AUPRC ($\times 100$) over labels seen in training, mean$_{\pm\mathrm{std}}$ over seeds where more than one seed is available. Best per column in bold.}
+\label{tab:loso}
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{2}{c}{CPSC} & \multicolumn{2}{c}{PTB-XL} & \multicolumn{2}{c}{Georgia} & \multicolumn{2}{c}{Shaoxing-Ningbo} & \multicolumn{2}{c}{Mean} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11}
+Method & AUROC & AUPRC & AUROC & AUPRC & AUROC & AUPRC & AUROC & AUPRC & AUROC & AUPRC \\
+\midrule
+Naive (unknown = negative) & 84.4$_{\pm 0.5}$ & 26.4$_{\pm 0.2}$ & 86.7$_{\pm 0.3}$ & 37.7$_{\pm 0.4}$ & 84.6$_{\pm 0.2}$ & 35.9$_{\pm 0.2}$ & 86.7$_{\pm 0.4}$ & 29.1$_{\pm 0.2}$ & 85.6$_{\pm 0.2}$ & 32.3$_{\pm 0.2}$ \\
+Masked loss & 84.4$_{\pm 0.5}$ & 26.8$_{\pm 0.2}$ & 87.3$_{\pm 0.4}$ & 38.2$_{\pm 0.5}$ & 85.5$_{\pm 0.2}$ & \textbf{36.4}$_{\pm 0.1}$ & 88.1$_{\pm 0.2}$ & 30.2$_{\pm 0.2}$ & 86.3$_{\pm 0.2}$ & 32.9$_{\pm 0.1}$ \\
+Hierarchical mask (Li et al.) & 84.2$_{\pm 0.2}$ & 26.8$_{\pm 0.2}$ & 87.6$_{\pm 0.2}$ & \textbf{38.7}$_{\pm 0.3}$ & \textbf{85.6}$_{\pm 0.1}$ & 35.8$_{\pm 0.3}$ & 87.7$_{\pm 0.1}$ & 29.8$_{\pm 0.4}$ & 86.3$_{\pm 0.1}$ & 32.8$_{\pm 0.3}$ \\
+CORAL & 84.4$_{\pm 0.4}$ & 25.9$_{\pm 0.1}$ & 87.5$_{\pm 0.1}$ & 38.2$_{\pm 0.5}$ & 85.1$_{\pm 0.2}$ & 35.0$_{\pm 0.3}$ & 87.5$_{\pm 0.5}$ & 29.4$_{\pm 0.7}$ & 86.1$_{\pm 0.1}$ & 32.1$_{\pm 0.2}$ \\
+DANN & 84.1$_{\pm 0.2}$ & 26.4$_{\pm 0.4}$ & 86.8$_{\pm 0.4}$ & 38.0$_{\pm 0.3}$ & 84.7$_{\pm 0.3}$ & 35.0$_{\pm 0.3}$ & 86.8$_{\pm 0.5}$ & 28.4$_{\pm 0.3}$ & 85.6$_{\pm 0.2}$ & 32.0$_{\pm 0.2}$ \\
+GroupDRO & \textbf{84.8}$_{\pm 0.1}$ & \textbf{27.7}$_{\pm 0.5}$ & 87.3$_{\pm 0.2}$ & 37.5$_{\pm 0.3}$ & 84.8$_{\pm 0.0}$ & 34.1$_{\pm 0.1}$ & 87.5$_{\pm 0.1}$ & 29.9$_{\pm 0.5}$ & 86.1$_{\pm 0.1}$ & 32.3$_{\pm 0.1}$ \\
+MixStyle & 84.4$_{\pm 0.3}$ & 26.4$_{\pm 0.2}$ & 87.4$_{\pm 0.1}$ & 38.1$_{\pm 0.1}$ & 85.3$_{\pm 0.1}$ & 35.2$_{\pm 0.2}$ & 87.2$_{\pm 0.7}$ & 29.3$_{\pm 0.5}$ & 86.1$_{\pm 0.1}$ & 32.2$_{\pm 0.1}$ \\
+\midrule
+Ours & 84.5$_{\pm 0.2}$ & 27.2$_{\pm 0.2}$ & \textbf{87.9}$_{\pm 0.2}$ & 38.6$_{\pm 0.4}$ & 85.6$_{\pm 0.1}$ & 35.8$_{\pm 0.3}$ & \textbf{88.3}$_{\pm 0.3}$ & \textbf{30.4}$_{\pm 0.5}$ & \textbf{86.6}$_{\pm 0.1}$ & \textbf{33.0}$_{\pm 0.2}$ \\
+\bottomrule
+\end{tabular}
+\end{sidewaystable}

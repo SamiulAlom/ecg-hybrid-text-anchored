@@ -1,0 +1,27 @@
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Macro AUROC ($\times 100$) on labels never supervised in the training sources (unseen), mean$_{\pm\mathrm{std}}$ over seeds; $n$ = number of evaluable unseen labels.}
+\label{tab:unseen}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{CPSC} & \multicolumn{2}{c}{PTB-XL} & \multicolumn{2}{c}{Georgia} & \multicolumn{2}{c}{Shaoxing-Ningbo} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Method & AUROC & $n$ & AUROC & $n$ & AUROC & $n$ & AUROC & $n$ \\
+\midrule
+Naive (unknown = negative) & 64.6$_{\pm 1.2}$ & 1 & -- & -- & -- & -- & 53.2$_{\pm 4.6}$ & 5 \\
+Masked loss & 48.0$_{\pm 1.3}$ & 1 & -- & -- & -- & -- & 52.1$_{\pm 1.5}$ & 5 \\
+Hierarchical mask (Li et al.) & 89.4$_{\pm 0.2}$ & 1 & -- & -- & -- & -- & 51.3$_{\pm 6.1}$ & 5 \\
+CORAL & 70.7$_{\pm 4.4}$ & 1 & -- & -- & -- & -- & 51.8$_{\pm 0.6}$ & 5 \\
+DANN & 49.2$_{\pm 12.7}$ & 1 & -- & -- & -- & -- & 52.6$_{\pm 3.0}$ & 5 \\
+GroupDRO & 89.8$_{\pm 0.3}$ & 1 & -- & -- & -- & -- & 52.6$_{\pm 6.9}$ & 5 \\
+MixStyle & 89.5$_{\pm 0.3}$ & 1 & -- & -- & -- & -- & 51.2$_{\pm 3.3}$ & 5 \\
+Ours & 94.3$_{\pm 0.2}$ & 1 & -- & -- & -- & -- & 67.0$_{\pm 1.3}$ & 5 \\
+ours-hyblinear & 94.3$_{\pm 0.2}$ & 1 & -- & -- & -- & -- & \textbf{67.3}$_{\pm 0.8}$ & 5 \\
+ours-pseudo & 94.3$_{\pm 0.5}$ & 1 & -- & -- & -- & -- & 66.5$_{\pm 0.1}$ & 5 \\
+ours-textdetach & \textbf{94.8}$_{\pm 0.4}$ & 1 & -- & -- & -- & -- & 66.7$_{\pm 1.0}$ & 5 \\
+ours-textonly & 93.9$_{\pm 0.4}$ & 1 & -- & -- & -- & -- & 62.0$_{\pm 1.7}$ & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
