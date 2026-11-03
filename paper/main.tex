@@ -46,10 +46,15 @@
 
 \title[Hybrid text-anchored learning from heterogeneously annotated ECG databases]{Hybrid text-anchored learning from heterogeneously annotated ECG databases for cross-database and open-vocabulary 12-lead ECG diagnosis}
 
-%% TODO(author): confirm names, affiliations and corresponding e-mail.
-\author*[1]{\fnm{Samiul} \sur{Alom}}\email{\RES{corresponding e-mail}}
+\author*[1]{\fnm{Md. Samiul} \sur{Alom}}\email{samiulalom090@gmail.com}
 
-\affil*[1]{\orgdiv{\RES{Department}}, \orgname{\RES{Institution}}, \orgaddress{\city{\RES{City}}, \country{\RES{Country}}}}
+\author[2]{\fnm{Rukaiya} \sur{Taha}}\email{taharukaiyah@gmail.com}
+
+\affil*[1]{\orgdiv{Miyan Research Institute}, \orgname{International University of Business Agriculture and Technology (IUBAT)}, \orgaddress{\city{Dhaka}, \country{Bangladesh}}}
+
+\affil[2]{\orgdiv{Department of Computer Science and Engineering}, \orgname{International University of Business Agriculture and Technology (IUBAT)}, \orgaddress{\city{Dhaka}, \country{Bangladesh}}}
+
+
 
 \abstract{\textbf{Purpose:} Public 12-lead electrocardiogram (ECG) databases each annotate a different subset of diagnoses, so pooling them for scale silently turns ``never coded here'' into ``absent'' and rewards models for recognizing the source database. We study whether a model can learn only from the labels each source observes, transfer to a database that contributed no training data, and score diagnoses for which no training label exists. \textbf{Methods:} We propose a hybrid classifier in which a one-dimensional squeeze-and-excitation residual encoder is read by two heads: a linear head with one weight vector per diagnosis, and a text-anchored label-query head in which frozen embeddings of short guideline-based diagnosis descriptions cross-attend to the ECG tokens and are scored by cosine similarity, so that it has no diagnosis-specific weights. Diagnoses annotated in training are scored by the mean of both heads, unannotated diagnoses by the text head alone. Both heads are trained with an asymmetric loss restricted to source-annotated entries, with clinical implication completion and weight averaging. We evaluate leave-one-database-out over four public databases from three countries (87{,}661 recordings, 43 diagnoses), separating diagnoses seen in training from those annotated only in the held-out database, and in a controlled annotation-removal experiment on PTB-XL, against seven label-handling and domain-generalization baselines trained under identical conditions, with three seeds each. \textbf{Results:} On seen diagnoses the method obtained the highest mean macro AUROC (86.6) and AUPRC (33.0); it was significantly better than six of the seven baselines across folds and seeds (Holm-adjusted Wilcoxon $p\le0.014$) and level with the masked-loss baseline ($+0.25$ points, $p=0.052$). Masking unannotated entries improved on naive pooling by 0.7 points, whereas no domain-generalization method improved on masking. On five diagnoses that no training database annotated, the method reached a macro AUROC of 67.0 where all baselines were at chance (51--53), and on diagnoses removed from PTB-XL training it reached 66.6--69.0 against 47--56. \textbf{Conclusion:} Correct handling of missing annotation matters more for cross-database ECG transfer than domain-generalization penalties, and a hybrid text-anchored head adds the ability to score unlabeled diagnoses from a description without loss of accuracy on labeled ones.}
 
@@ -81,7 +86,7 @@ available, de-identified data released under open licenses.
 PhysioNet/CinC 2020 sources~\cite{perez2020}, and the Shaoxing--Ningbo database~\cite{zheng2020,zheng2022ningbo}.
 \item \textbf{Code availability:} \url{https://github.com/SamiulAlom/ecg-hybrid-text-anchored}. The repository contains the preprocessing, training, baseline and aggregation code, the frozen diagnosis descriptions, the exact command of every run, the split seeds, and the logged results of all 153 runs reported in the paper.
 \item \textbf{Use of AI tools:} An AI assistant (Claude, Anthropic) was used for code development and language
-editing. The author designed, verified and takes full responsibility for all content and results.
+editing. The authors designed, verified and take full responsibility for all content and results.
 \item \textbf{Author contribution:} \RES{to be completed}.
 \end{itemize}
 
